@@ -41,7 +41,7 @@ export default function Header() {
               <Logo3D />
             </Suspense>
           </Link>
-          <nav className="hidden md:flex items-center space-x-6 text-sm ml-10 font-medium">
+          <nav className="hidden md:flex items-center space-x-6 text-sm  font-medium">
             <Link to="/about" className="hover:text-primary transition">
               About
             </Link>

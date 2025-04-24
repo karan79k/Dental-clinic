@@ -103,7 +103,7 @@ function TestimonialCard({
     <motion.div
       className="absolute inset-0 flex items-center justify-center "
       style={{
-        top: index * 50,
+        top: index * 40,
         y: isFirst ? "0%" : y,
         zIndex: index,
       }}

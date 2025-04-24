@@ -35,25 +35,25 @@ export default function OurTreatmentsSlider() {
   const nextIndex = (current + 1) % data.length;
 
   return (
-    <div className="h-screen bg-black flex items-center justify-center">
+    <div className="h-[140vh] bg-black flex items-center justify-center ">
       <div className="container grid grid-cols-1 md:grid-cols-2 gap-8 w-full items-center">
 
         {/* Text Side */}
         <div className="space-y-50 flex flex-col justify-center text-left relative h-full">
           <div>
-            <h4 className="text-indigo-400 text-sm font-medium">Our Treatments</h4>
+            <h4 className="text-[#1ab8b3] text-[18px] mb-4 font-medium">Our Treatments</h4>
             <h3 className="text-white text-4xl font-bold tracking-wide drop-shadow-lg">
               {data[current].category}
             </h3>
 
-            <p className="text-white/80 text-lg mt-4 leading-relaxed">
+            <p className="text-white/80 text-lg mt-16 pr-35 leading-relaxed">
               {data[current].title}
             </p>
 
 
           </div>
           {/* Navigation */}
-          <div className="absolute bottom-4 left-4 z-50 flex space-x-4">
+          <div className="absolute -bottom-8 left-4 z-50 flex space-x-4">
             <button
               onClick={prevSlide}
               className="p-4 text-3xl border bg-slate-50/10 text-white rounded-full hover:bg-slate-50/20"

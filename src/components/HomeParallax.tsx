@@ -24,13 +24,13 @@ export default function HomeParallax() {
     transition={{ duration: 0.8 }}
     className="animate-gradient mb-4"
   >
-    {/* First line: Smooth gradient from light blue to turquoise */}
-    <span className="bg-gradient-to-r from-[#5e9de6] via-[#c0e9e7] to-[#1ab8b3] bg-[length:200%] bg-clip-text text-transparent">
+    {/* First line: Enhanced brightness with lighter colors */}
+    <span className="bg-gradient-to-r from-[#7de2c5] via-[#c4e8f0] to-[#e0f2f1] bg-[length:300%] bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(125,226,197,0.7)]">
       Brighten Your Smile
     </span>
     <br />
-    {/* Second line: Deeper tones and elegant gradient design */}
-    <span className="bg-gradient-to-r from-[#3671b9] via-[#cdd7fa] to-[#935cc2] bg-[length:200%] bg-clip-text text-transparent">
+    {/* Second line: Brighter gradient with increased glow effect */}
+    <span className="bg-gradient-to-r from-[#7de2c5] via-[#c4e8f0] to-[#e0f2f1] bg-[length:300%] bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(125,226,197,0.7)]">
       Brighten Your Day
     </span>
   </motion.h1>
