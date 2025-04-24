@@ -62,9 +62,9 @@ export default function OurTeam() {
           </p>
           <div>
             <Link to='/our-doctors'>
-            <button className="relative cursor-pointer border border-secondary text-primary px-12 py-4 mt-6 rounded-md transition-all duration-200 hover:bg-primary hover:text-primary hover:scale-105 ">
+              <button className="relative cursor-pointer border border-secondary text-primary px-12 py-4 mt-6 rounded-md transition-all duration-200 hover:bg-primary hover:text-primary hover:scale-105">
               View All
-            </button>
+              </button>
             </Link>
           </div>
         </div>

@@ -57,9 +57,7 @@ export default function Header() {
             <Link to="/our-doctors" className="hover:text-primary transition">
               Our doctors
             </Link>
-            <Link to="/treaments" className="hover:text-primary transition">
-              Treatments
-            </Link>
+          
           </nav>
         </div>
 
@@ -111,13 +109,7 @@ export default function Header() {
           >
             Referrals
           </Link>
-          <Link
-            to="/treaments"
-            onClick={() => setIsOpen(false)}
-            className="hover:text-purple-400"
-          >
-            Treatments
-          </Link>
+          
           <Link to={"#"}>
             <motion.button
               whileHover={{ scale: 1.05 }}

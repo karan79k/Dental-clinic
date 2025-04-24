@@ -6,34 +6,38 @@ import Button from "./Button";
 
 const testimonials = [
   {
-    text: "First implant, absolutely delighted with the result and the treatment was painless.<br/> Would highly recommend the practice, Mr Church, Yvonne and the staff, who are all highly professional.Thank you for getting my smile back!",
-    author: "Sandra Jamieson Implant Patient",
-  },
-  {
-    text: "I was very worried about having to get dental work done so much so didn't think it would be possible. Amazed at how well the process has been with sedation. Mr Church has been fab and reassuring. Absolutely no problems . Big thanks to Yvonne as well.",
-    author: "Christine Tennant Implant Patient",
-  },
-  {
-    text: "I was never happy with my teeth and felt like the edges were not even. I wanted an improvement but did not want any damage to my own teeth. Since I have had composite bonding done, my confidence has increased so much. I get so many compliments on my teeth now. Thank you so much!",
-    author: "Mhairi Mclean Invisalign & Composite Bonding Patient",
-  },
-  {
     text: "This is an excellent practice! Nothing is too much trouble to any one of the members of staff here. <br/> I can highly recommend Millersneuk Dental Practice!",
-    author: "Janice Reid Denplan Patient",
+    author: "Janice Reid - Denplan Patient",
   },
+  {
+    text: "First implant, absolutely delighted with the result and the treatment was painless.<br/> Would highly recommend the practice, Mr Church, Yvonne and the staff, who are all highly professional. Thank you for getting my smile back!",
+    author: "Sandra Jamieson - Implant Patient",
+  },
+  {
+    text: "I was never happy with my teeth and felt like the edges were not even. I wanted an improvement but did not want any damage to my own teeth.<br/> Since I have had composite bonding done, my confidence has increased so much. I get so many compliments on my teeth now.",
+    author: "Mhairi Mclean - Invisalign & Bonding Patient",
+  },
+  {
+    text: "Outstanding dental care! The entire team is professional and caring. The modern facilities and attention to detail made my dental experience exceptional.<br/> Very pleased with the results of my treatment and the friendly atmosphere.",
+    author: "David Thompson - Cosmetic Dentistry Patient",
+  },
+  {
+    text: "As someone who was always anxious about dental visits, this practice changed everything for me.<br/> The staff is incredibly patient and understanding. Their gentle approach and clear communication made me feel completely at ease.",
+    author: "Emma Wilson - Nervous Patient Care",
+  }
 ];
 
 export default function Testimonials() {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start start", "end end"], // Changed for better parallax effect
+    offset: ["start start", "end end"], 
   });
 
   return (
     <div
       ref={containerRef}
-      className="relative w-full min-h-[200vh] bg-black/80 "
+      className="relative w-full min-h-[200vh] bg-black/80 pb-20"
     >
       <div className="container sticky top-0 h-screen overflow-hidden">
         <div className=" grid grid-cols-1 md:grid-cols-2 h-full ">
@@ -90,7 +94,7 @@ function TestimonialCard({
   const y = useTransform(
     scrollYProgress,
     [sectionStart, sectionEnd],
-    ["80%", "2%"]
+    ["80%", "4%"]
   );
 
   // const opacity = useTransform(

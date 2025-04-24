@@ -3,14 +3,10 @@ import { useRef } from "react"
 import { motion, useScroll, useTransform  } from "framer-motion"
 import OurTreatmentsSlider from "../components/OurTreatmentsSlider"
 import OurPractice from "../components/OurPractice"
-import GetInTouch from "../components/GetInTouch"
-import Book from "../components/Book"
-// import BlogCards from "../components/BlogCards"
 import UpperParallax from "../components/UpperParallax"
 import Testimonials from "../components/Testimonials"
 import OurTeam from "../components/OurTeam"
 import HomeParallax from "../components/HomeParallax"
-// import Button from "../components/Button"
 
 export default function Home() {
   
@@ -26,9 +22,6 @@ export default function Home() {
       <Testimonials/>
       <OurPractice/>
       <OurTeam/>
-      {/* <BlogCards/> */}
-      <Book/>
-      <GetInTouch/>
     </div>
   )
 }

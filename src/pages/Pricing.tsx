@@ -1,5 +1,4 @@
-import Book from "../components/Book";
-import GetInTouch from "../components/GetInTouch";
+
 
 export default function Pricing() {
   return (
@@ -12,9 +11,6 @@ export default function Pricing() {
           <p className="font-bold">0% finance options are also available subject to T&Cs.</p>
           </div>
         </div>
-      <Book/>
-      <GetInTouch/>
-      
     </div>
   )
 }

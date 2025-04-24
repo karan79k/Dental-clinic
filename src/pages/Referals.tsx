@@ -1,5 +1,4 @@
-import Book from "../components/Book";
-import GetInTouch from "../components/GetInTouch";
+
 
 export default function Referals() {
   return (
@@ -17,9 +16,6 @@ export default function Referals() {
           </div>
 
       </div>
-      <Book/>
-      <GetInTouch/>
-      
     </div>
   )
 }

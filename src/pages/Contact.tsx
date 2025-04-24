@@ -1,5 +1,4 @@
-import Book from "../components/Book";
-import GetInTouch from "../components/GetInTouch";
+
 import { FaPhoneAlt } from "react-icons/fa";
 import { MdOutlineEmail } from "react-icons/md";
 import { FaMapMarkerAlt } from "react-icons/fa";
@@ -64,9 +63,6 @@ export default function Contact() {
         </div>
       </div>
 
-      <Book />
-      <GetInTouch />
-      
     </div>
   );
 }

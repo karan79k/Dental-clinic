@@ -1,5 +1,4 @@
-import Book from "../components/Book";
-import GetInTouch from "../components/GetInTouch";
+
 import { motion } from "framer-motion";
 import Progressbar from "../components/Progressbar";
 
@@ -52,9 +51,7 @@ export default function About() {
 
       <Progressbar/>
       {/* Other Sections */}
-      <Book />
-      <GetInTouch />
-      
+     
     </div>
   );
 }
