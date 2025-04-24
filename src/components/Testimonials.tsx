@@ -39,7 +39,7 @@ export default function Testimonials() {
         <div className=" grid grid-cols-1 md:grid-cols-2 h-full ">
           <div className="flex flex-col justify-center sticky top-0 h-screen border-violet-600 ">
             <h3 className="mb-6 text-white">Patient Testimonials</h3>
-            <p className=" text-white text-shadow-md mb-8 ">
+            <p className=" text-white text-shadow-md mb-8 pr-24">
               We've built a reputation on going the extra mile for our patients.
               For us, it's always about you and treating every patient
               individually.

@@ -12,6 +12,10 @@ const config: Config = {
       colors: {
         primary: "#1AB8B3", // no need for `DEFAULT` unless you have multiple shades
       },
+      fontFamily: {
+        aktiv: ['var(--font-aktiv)', 'sans-serif'],
+        roboto: ['var(--font-roboto)', 'sans-serif'],
+      },
     },
   },
   plugins: [],

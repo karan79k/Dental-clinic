@@ -84,7 +84,7 @@ function ParallaxImage({ scrollYProgress }: { scrollYProgress: any }) {
         loop
         playsInline
         // className=" w-[80vw] h-[80vh] object-cover rounded-3xl shadow-[0_60px_140px_60px_rgba(151,125,255,0.45)]"
-        className=" w-[100vw] h-[85vh] object-cover rounded-3xl shadow-gradient-custom"
+        className=" w-[90vw] h-[85vh] object-cover rounded-3xl shadow-gradient-custom"
       />
     </motion.div>
   );

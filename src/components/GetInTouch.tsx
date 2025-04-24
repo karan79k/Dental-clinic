@@ -33,7 +33,7 @@ export default function GetInTouch() {
         Join our Community
       </motion.h2>
 
-      <div className="mt-[250px] w-full max-w-xl text-center">
+      <div className="mt-[190px] w-full max-w-xl text-center">
         <p className="text-gray-300 mb-6">
           Don&apos;t worry — we won&apos;t spam you with countless emails or texts.
           Stay in touch and receive VIP offers and first-access to our events!

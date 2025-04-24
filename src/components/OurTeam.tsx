@@ -38,7 +38,7 @@ const team: TeamMember[] = [
 function NormalCard({ image, name, specificaiton, text }: NormalCardProps) {
   return (
     <div className="card-container">
-      <img src={image} alt={name} className="rounded-md h-[70vh] bg-cover" />
+      <img src={image} alt={name} className="rounded-md w-[70vh] bg-cover" />
       <div className="content mt-6 flex flex-col gap-0">
         <div className="text-lg font-semibold">{name}</div>
         <div className="text-md font-medium text-[#1AB8B3]">{specificaiton}</div>
@@ -53,16 +53,16 @@ export default function OurTeam() {
     <div className="min-h-screen pt-32 bg-black text-white pb-20">
       <div className="container mx-auto flex flex-col gap-y-[-30px] md:flex-row gap-12">
         <div className="md:w-2/5 flex flex-col justify-start space-y-6 text-left">
-          <p className="text-primary text-sm uppercase tracking-wider">
+          <p className="text-primary text-sm tracking-wider pl-1">
             Meet your doctors
           </p>
           <h3 className="text-white">Our Doctors</h3>
-          <p className="text-white/80">
+          <p className="text-white/80 ml-1">
             We put our long experience at your disposal
           </p>
           <div>
             <Link to='/our-doctors'>
-            <button className="relative cursor-pointer border border-secondary text-primary px-12 py-4 rounded-md transition-all duration-200 hover:bg-primary hover:text-primary hover:scale-105 ">
+            <button className="relative cursor-pointer border border-secondary text-primary px-12 py-4 mt-6 rounded-md transition-all duration-200 hover:bg-primary hover:text-primary hover:scale-105 ">
               View All
             </button>
             </Link>

@@ -53,7 +53,7 @@ export default function OurTreatmentsSlider() {
 
           </div>
           {/* Navigation */}
-          <div className="absolute -bottom-8 left-4 z-50 flex space-x-4">
+          <div className="absolute -bottom-4 left-4 z-50 flex space-x-4">
             <button
               onClick={prevSlide}
               className="p-4 text-3xl border bg-slate-50/10 text-white rounded-full hover:bg-slate-50/20"
