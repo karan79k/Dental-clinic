@@ -20,7 +20,7 @@ export default function GetInTouch() {
       
       <motion.h2
         style={{ x: leftToCenter, opacity }}
-        className="absolute top-[20%] left-1/2 -translate-x-1/2 whitespace-nowrap text-[56px]"
+        className="absolute top-[23%] left-1/2 -translate-x-1/2 whitespace-nowrap text-[56px]"
       >
         Stay in touch
       </motion.h2>
@@ -28,7 +28,7 @@ export default function GetInTouch() {
       <motion.h2
         style={{ x: rightToCenter, opacity }}
         // className="bg-[linear-gradient(180deg,_rgba(255,207,242,1)_0%,_rgba(151,125,255,1)_30%,_rgba(0,51,255,1)_100%)] bg-clip-text text-transparent absolute top-[30%] left-1/2 -translate-x-1/2 whitespace-nowrap "
-        className="text-[56px] text-gradient-custom bg-clip-text text-transparent absolute top-[30%] left-1/2 -translate-x-1/2 whitespace-nowrap "
+        className="text-[56px] text-gradient-custom bg-clip-text text-transparent absolute top-[33%] left-1/2 -translate-x-1/2 whitespace-nowrap "
       >
         Join our Community
       </motion.h2>
