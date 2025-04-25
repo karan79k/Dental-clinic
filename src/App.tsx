@@ -11,11 +11,11 @@ import ScrollToTop from './components/ScrollToTop'
 import Footer from './components/Footer'
 import Book from './components/Book'
 import GetInTouch from './components/GetInTouch'
-//import Loader from './components/Loader'
-//import { useState, useEffect } from 'react'
+import Loader from './components/Loader'
+import { useState, useEffect } from 'react'
 
 function App() {  
-  {/**
+
      const [isLoading, setIsLoading] = useState(true);
   
   useEffect(() => {
@@ -54,8 +54,10 @@ function App() {
     </>
   )
 }
-    */}
-    return (<>
+
+
+  {/**
+  return (<>
      
         <Router>
     
@@ -81,6 +83,8 @@ function App() {
       
         </>
       )
-    }
+    */}
+  
+    
 
 export default App
