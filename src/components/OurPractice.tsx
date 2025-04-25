@@ -86,7 +86,7 @@ function PrallaxSlide({ src, index, scrollYProgress, totalImages, isFirst, path 
         <motion.img
           src={src}
           alt="img"
-          className="object-cover w-[90vw] lg:w-[85vw] h-[95vh] sm:h-screen md:h-[80vh] lg:h-[80vh] rounded-2xl brightness-70"
+          className="object-cover w-[95vw] lg:w-[85vw]  sm:h-screen md:h-[80vh] lg:h-[80vh] rounded-2xl brightness-70"
         />
       </Link>
     </motion.div>
