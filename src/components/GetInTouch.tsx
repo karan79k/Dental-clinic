@@ -46,7 +46,7 @@ export default function GetInTouch() {
               placeholder="Enter your email"
               className="w-[360px] h-[40px] px-4 rounded-[8px] font-light text-[16px] text-white outline focus:ring-2 focus:ring-violet-500"
             />
-            <button className="bg-primary text-[16px] fonr-light text-white w-[104px] h-[40px] px-[3px] py-[4px] rounded-md hover:bg-violet-600 transition">
+            <button className="bg-primary text-[16px] fonr-light text-white w-[104px] h-[42px] px-[3px] py-[4px] rounded-md hover:bg-violet-600 transition">
               Subscribe
             </button>
           </div>
