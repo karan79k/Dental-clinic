@@ -50,7 +50,7 @@ function NormalCard({ image, name, specificaiton, text }: NormalCardProps) {
 
 export default function OurTeam() {
   return (
-    <div className="min-h-screen pt-32 bg-black text-white pb-20">
+    <div className="min-h-screen  bg-black text-white pb-20">
       <div className="container mx-auto flex flex-col gap-y-[-30px] md:flex-row gap-12">
         <div className="md:w-2/5 flex flex-col justify-start space-y-6 text-left">
           <p className="text-primary text-sm tracking-wider pl-1">
