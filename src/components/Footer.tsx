@@ -34,7 +34,7 @@ const footer = [
 
 export default function Footer() {
   return (
-    <footer className="bg-black px-6 py-10 text-sm">
+    <footer className="bg-black px-6 py-10 text-sm border-t-[1px] border-t-[#1ab8b3b9]"> 
       <div className="container mx-auto space-y-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 text-gray-400">
           {/* Column 1 - Contact Info */}
@@ -46,7 +46,7 @@ export default function Footer() {
                 alt="Logo"
                 className="h-8 sm:h-10 md:h-12 w-auto object-contain"
               />
-              </Link>
+            </Link>
             <ul className="space-y-4 mt-4">
               <li className="hover:text-primary text-white">
                 Quality Clinics, Saudi Arabia.
@@ -60,7 +60,9 @@ export default function Footer() {
 
           {/* Column 2 - Navigation */}
           <div>
-            <h4 className="text-primary font-semibold mb-4">Navigation</h4>
+            <h4 className="text-primary mb-4" style={{ fontSize: "16px", fontWeight: 400 }}>
+              Navigation
+            </h4>
             <ul className="space-y-2 text-white">
               <li>
                 <Link to="/" className="hover:text-primary">
@@ -97,7 +99,9 @@ export default function Footer() {
 
           {/* Column 3 - Useful Links */}
           <div>
-            <h4 className="text-primary font-semibold mb-4">Useful Links</h4>
+            <h4 className="text-primary mb-4" style={{ fontSize: "16px", fontWeight: 400 }}>
+              Useful Links
+            </h4>
             <ul className="space-y-2 text-white">
               <li>
                 <Link to="/" className="hover:text-primary">
@@ -119,7 +123,9 @@ export default function Footer() {
 
           {/* Column 4 - Treatments */}
           <div>
-            <h4 className="text-primary font-semibold mb-4">Treatments</h4>
+            <h4 className="text-primary mb-4" style={{ fontSize: "16px", fontWeight: 400 }}>
+              Treatments
+            </h4>
             <ul className="space-y-2 text-white">
               <li>
                 <Link to="/" className="hover:text-primary">
@@ -151,7 +157,9 @@ export default function Footer() {
 
           {/* Column 5 - Subscribe */}
           <div>
-            <h4 className="text-primary mb-4">Subscribe</h4>
+            <h4 className="text-primary mb-4" style={{ fontSize: "16px", fontWeight: 400 }}>
+              Subscribe
+            </h4>
             <p className="text-gray-300 mb-4 ">
               Join our newsletter to stay up to date on features and releases.
             </p>

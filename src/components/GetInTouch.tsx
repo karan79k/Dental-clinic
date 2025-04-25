@@ -20,7 +20,7 @@ export default function GetInTouch() {
       
       <motion.h2
         style={{ x: leftToCenter, opacity }}
-        className="absolute top-[20%] left-1/2 -translate-x-1/2 whitespace-nowrap"
+        className="absolute top-[20%] left-1/2 -translate-x-1/2 whitespace-nowrap text-[56px]"
       >
         Stay in touch
       </motion.h2>
@@ -28,13 +28,13 @@ export default function GetInTouch() {
       <motion.h2
         style={{ x: rightToCenter, opacity }}
         // className="bg-[linear-gradient(180deg,_rgba(255,207,242,1)_0%,_rgba(151,125,255,1)_30%,_rgba(0,51,255,1)_100%)] bg-clip-text text-transparent absolute top-[30%] left-1/2 -translate-x-1/2 whitespace-nowrap "
-        className="text-gradient-custom bg-clip-text text-transparent absolute top-[30%] left-1/2 -translate-x-1/2 whitespace-nowrap "
+        className="text-[56px] text-gradient-custom bg-clip-text text-transparent absolute top-[30%] left-1/2 -translate-x-1/2 whitespace-nowrap "
       >
         Join our Community
       </motion.h2>
 
-      <div className="mt-[190px] w-full max-w-xl text-center">
-        <p className="text-gray-300 mb-6">
+      <div className="mt-[160px] w-full max-w-xl text-center">
+        <p className="text-gray-300 mb-6 text-[16px]">
           Don&apos;t worry — we won&apos;t spam you with countless emails or texts.
           Stay in touch and receive VIP offers and first-access to our events!
         </p>
@@ -44,13 +44,13 @@ export default function GetInTouch() {
             <input
               type="email"
               placeholder="Enter your email"
-              className="w-[50%] p-2 rounded-md text-white outline focus:ring-2 focus:ring-violet-500"
+              className="w-[360px] h-[40px] px-4 rounded-[8px] font-light text-[16px] text-white outline focus:ring-2 focus:ring-violet-500"
             />
-            <button className="bg-primary text-xl text-white px-4 py-2 rounded-md hover:bg-violet-600 transition">
+            <button className="bg-primary text-[16px] fonr-light text-white w-[104px] h-[40px] px-[3px] py-[4px] rounded-md hover:bg-violet-600 transition">
               Subscribe
             </button>
           </div>
-          <p className="text-gray-500">
+          <p className="text-gray-500 text-[16px]">
             By clicking Sign Up you&apos;re confirming that you agree with our Terms
             and Conditions.
           </p>

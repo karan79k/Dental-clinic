@@ -11,11 +11,12 @@ import ScrollToTop from './components/ScrollToTop'
 import Footer from './components/Footer'
 import Book from './components/Book'
 import GetInTouch from './components/GetInTouch'
-import Loader from './components/Loader'
-import { useState, useEffect } from 'react'
+//import Loader from './components/Loader'
+//import { useState, useEffect } from 'react'
 
-function App() {
-  const [isLoading, setIsLoading] = useState(true);
+function App() {  
+  {/**
+     const [isLoading, setIsLoading] = useState(true);
   
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -53,5 +54,33 @@ function App() {
     </>
   )
 }
+    */}
+    return (<>
+     
+        <Router>
+    
+          <Header />
+          <ScrollToTop />
+          <Routes>
+    
+            <Route >
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/pricing" element={<Pricing />} />
+              <Route path="/referals" element={<Referals />} />
+              <Route path="/our-doctors" element={<OurDoctors />} />
+              <Route path="/contact" element={<Contact />} />
+    
+            </Route>
+    
+          </Routes>
+          <Book />
+          <GetInTouch />
+          <Footer />
+        </Router>
+      
+        </>
+      )
+    }
 
 export default App

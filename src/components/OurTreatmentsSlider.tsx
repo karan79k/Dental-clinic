@@ -34,10 +34,10 @@ export default function OurTreatmentsSlider() {
 
   return (
     <div className="h-[130vh] bg-black flex items-center justify-center sm:pb-10">
-      <div className="container grid grid-cols-1 md:grid-cols-2 gap-8 w-full items-center">
+      <div className="container grid grid-cols-1 md:grid-cols-2 gap-12 w-full items-center">
         {/* Text Side */}
-        <div className="space-y-8 flex flex-col  justify-center text-left relative h-full">
-          <div className="pb-40">
+        <div className="space-y-8 flex flex-col justify-center text-left relative h-full">
+          <div className="mt-28">
             <h4 className="text-[#1ab8b3] text-[18px] mb-4 font-medium">Our Treatments</h4>
             <h3 className="text-white text-4xl font-bold tracking-wide drop-shadow-lg">
               {data[current].category}
@@ -46,18 +46,19 @@ export default function OurTreatmentsSlider() {
               {data[current].title}
             </p>
           </div>
-
-          {/* Navigation */}
-          <div className="absolute -bottom-10 left-4 z-50 flex space-x-4 ">
+          {/* Navigation - moved outside of changing content */}
+          <div className="mt-auto flex space-x-4 z-50">
             <button
               onClick={prevSlide}
               className="p-4 text-3xl border bg-slate-50/10 text-white rounded-full hover:bg-slate-50/20"
+              aria-label="Previous"
             >
               <MdKeyboardArrowLeft />
             </button>
             <button
               onClick={nextSlide}
               className="p-4 text-3xl border bg-slate-50/10 text-white rounded-full hover:bg-slate-50/20"
+              aria-label="Next"
             >
               <MdKeyboardArrowRight />
             </button>
@@ -99,7 +100,7 @@ export default function OurTreatmentsSlider() {
 
             {/* Gradient Overlay */}
             <div className="absolute bottom-0 left-0 w-full h-60 bg-gradient-to-t from-black to-transparent rounded-b-xl flex items-end justify-center z-30">
-              <div className="text-white text-2xl font-semibold mb-6">
+              <div className="text-white text-2xl font-normal mb-6">
                 {data[current].category}
               </div>
             </div>

@@ -1,7 +1,7 @@
 export default function Button() {
   return (
     <button
-    className="p-4 bg-gradient-custom cursor-pointer text-white rounded-md w-[200px] 
+    className="p-4 bg-gradient-custom cursor-pointer text-white rounded-md w-[200px] text-[16px] 
               
                transform hover:scale-105 transition-all duration-300"
   >

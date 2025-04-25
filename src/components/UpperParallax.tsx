@@ -1,127 +1,107 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
 import Button from "./Button";
 
 const beforeImages = [
-  "https://images.unsplash.com/photo-1525222285365-d6bfe94ec598?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3",
-  "https://images.unsplash.com/photo-1628619487925-e9b8fc4c6b08?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3",
-  "https://plus.unsplash.com/premium_photo-1708110769999-02be12f5930d?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3",
-  "https://plus.unsplash.com/premium_photo-1703382945684-60321c25f248?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3",
-  "https://images.unsplash.com/photo-1632874638128-c10ddbb9d51c?q=80&w=2000&auto=format&fit=crop&ixlib=rb-4.0.3"
+  "https://images.unsplash.com/photo-1525222285365-d6bfe94ec598?q=80",
+  "https://images.unsplash.com/photo-1628619487925-e9b8fc4c6b08?q=80",
+  "https://plus.unsplash.com/premium_photo-1708110769999-02be12f5930d?q=80",
+  "https://plus.unsplash.com/premium_photo-1703382945684-60321c25f248?q=80",
+  "https://images.unsplash.com/photo-1632874638128-c10ddbb9d51c?q=80"
 ];
 
-const afterImages = [
-  "https://images.unsplash.com/photo-1525222285365-d6bfe94ec598?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3",
-  "https://images.unsplash.com/photo-1628619487925-e9b8fc4c6b08?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3",
-  "https://plus.unsplash.com/premium_photo-1708110769999-02be12f5930d?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3",
-  "https://plus.unsplash.com/premium_photo-1703382945684-60321c25f248?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3",
-  "https://images.unsplash.com/photo-1632874638128-c10ddbb9d51c?q=80&w=2000&auto=format&fit=crop&ixlib=rb-4.0.3"
-];
+const afterImages = [...beforeImages];
 
 export default function ParallaxWithScrollAndInView() {
-  const containerRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end end"],
-  });
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [direction, setDirection] = useState(0); // -1 for left, 1 for right
 
-  const y = useTransform(scrollYProgress, [0.9, 1], ["-10%", "-20%"]);
+  function handleNavigation(dir: number) {
+    setDirection(dir);
+    setCurrentIndex((prev) => {
+      const newIndex = prev + dir;
+      if (newIndex < 0) return beforeImages.length - 1;
+      if (newIndex >= beforeImages.length) return 0;
+      return newIndex;
+    });
+  }
 
   return (
-    <div ref={containerRef} className="relative w-full min-h-[500vh] py-10 ">
-      <div className="sticky top-0 h-screen py-20">
-        <div className="container grid grid-cols-1 md:grid-cols-2 h-full w-full">
-          
-          {/* Text Section */}
-          <div className="flex flex-col sticky top-0 h-screen py-10 pr-[8rem]">
-            <h3 className="mb-6">Smile Makeovers that Change Lives</h3>
-            <p className="text-gray-600 mb-8">
-              We pride ourselves on delivering exceptionally high levels of cosmetic dentistry to each patient that walks through our doors.
-            </p>
-            <Button />
-          </div>
+    <div className="relative w-full min-h-screen py-10 bg-white">
+      <div className="h-screen py-20 grid grid-cols-1 md:grid-cols-2 container">
 
-          {/* Parallax Images */}
-          <div className="relative h-screen col-span-1">
+        {/* Text Section */}
+        <div className="flex flex-col justify-center pr-[8rem]">
+          <h3 className="mb-6 text-[56px]">Smile Makeovers that Change Lives</h3>
+          <p className="text-gray-600 mb-8 text-[18px]">
+            We pride ourselves on delivering exceptionally high levels of cosmetic dentistry to each patient that walks through our doors.
+          </p>
+          <Button />
+        </div>
+
+        {/* Image Section */}
+        <div className="relative h-[500px] w-full overflow-hidden rounded-2xl shadow-lg">
+          <AnimatePresence custom={direction}>
             <motion.div
-              style={{ y }}
-              className="sticky top-0 h-screen w-full overflow-hidden"
+              key={currentIndex}
+              custom={direction}
+              variants={variants}
+              initial="enter"
+              animate="center"
+              exit="exit"
+              transition={{ duration: 0.6 }}
+              className="absolute inset-0 w-full h-full"
             >
-              {beforeImages.map((_, index) => (
-                <SlideImage
-                  key={index}
-                  index={index}
-                  total={beforeImages.length}
-                  beforeSrc={beforeImages[index]}
-                  afterSrc={afterImages[index]}
-                  scrollYProgress={scrollYProgress}
-                  isFirst={index === 0}
-                  isLast={index === beforeImages.length - 1}
-                />
-              ))}
+              <div className="relative w-full h-full flex">
+                <div className="w-1/2 h-full overflow-hidden">
+                  <img
+                    src={beforeImages[currentIndex]}
+                    alt={`Before ${currentIndex}`}
+                    className="object-cover w-full h-full brightness-75"
+                  />
+                </div>
+                <div className="w-1/2 h-full overflow-hidden">
+                  <img
+                    src={afterImages[currentIndex]}
+                    alt={`After ${currentIndex}`}
+                    className="object-cover w-full h-full brightness-75"
+                  />
+                </div>
+              </div>
             </motion.div>
-          </div>
+          </AnimatePresence>
+
+          {/* Navigation Buttons */}
+          <button
+            onClick={() => handleNavigation(-1)}
+            className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-white p-2 rounded-full shadow text-xl"
+          >
+            ⬅
+          </button>
+          <button
+            onClick={() => handleNavigation(1)}
+            className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-white p-2 rounded-full shadow text-xl"
+          >
+            ➡
+          </button>
         </div>
       </div>
     </div>
   );
 }
 
-function SlideImage({
-  beforeSrc,
-  afterSrc,
-  index,
-  total,
-  scrollYProgress,
-  isFirst,
-}: {
-  beforeSrc: string;
-  afterSrc: string;
-  index: number;
-  total: number;
-  scrollYProgress: any;
-  isFirst: boolean;
-  isLast: boolean;
-}) {
-  const sectionStart = index / total;
-  const sectionEnd = (index + 1) / total;
-
-  const y = useTransform(
-    scrollYProgress,
-    [sectionStart, sectionEnd],
-    ["100%", "0%"]
-  );
-
-  return (
-    <motion.div
-      className="absolute inset-0 flex items-center justify-center"
-      style={{
-        y: isFirst ? "0%" : y,
-        zIndex: index,
-      }}
-    >
-      <div className="pt-4 w-full h-full flex items-center justify-center">
-        <div className="relative w-[120%] h-[90%] rounded-2xl overflow-hidden">
-          {/* Left Image */}
-          <div className="absolute inset-0 w-1/2 overflow-hidden">
-            <img
-              src={beforeSrc}
-              alt={`Before ${index}`}
-              className="object-cover w-full h-full brightness-75 transition-transform duration-300"
-            />
-          </div>
-          {/* Right Image */}
-          <div className="absolute inset-0 left-1/2 w-1/2 overflow-hidden">
-            <img
-              src={afterSrc}
-              alt={`After ${index}`}
-              className="object-cover w-full h-full brightness-75 transition-transform duration-300"
-            />
-          </div>
-        
-        </div>
-      </div>
-    </motion.div>
-  );
-}
+// Motion Variants for left/right transition
+const variants = {
+  enter: (direction: number) => ({
+    x: direction > 0 ? 300 : -300,
+    opacity: 0
+  }),
+  center: {
+    x: 0,
+    opacity: 1
+  },
+  exit: (direction: number) => ({
+    x: direction > 0 ? -300 : 300,
+    opacity: 0
+  })
+};

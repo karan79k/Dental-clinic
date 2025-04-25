@@ -66,8 +66,8 @@ export default function Book() {
             ease: [0.32, 0.72, 0, 1]
           }}
         >
-          <h3 className="mb-4 text-center">Book an appointment today</h3>
-          <p className="mb-4 text-center">
+          <h3 className="mb-4 text-center text-[56px]">Book an appointment today</h3>
+          <p className="mb-4 text-center text-[18px]">
             Start your smile journey at Millersneuk Dental Practice, Lenzie.
           </p>
           <Button />

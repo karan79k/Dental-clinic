@@ -25,18 +25,17 @@ export default function HomeParallax() {
     className="animate-gradient mb-4"
   >
     {/* First line: Enhanced brightness with lighter colors */}
-    <span className="bg-gradient-to-r from-[#7de2c5] via-[#c4e8f0] to-[#e0f2f1] bg-[length:300%] bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(125,226,197,0.7)]">
+    <span className="bg-gradient-to-b from-[#2f886c] via-[#c0dbdf] to-[#ffffff] bg-[length:300%] bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(125,226,197,0.7)] text-[56px]">
       Brighten Your Smile
     </span>
     <br />
-    {/* Second line: Brighter gradient with increased glow effect */}
-    <span className="bg-gradient-to-r from-[#7de2c5] via-[#c4e8f0] to-[#e0f2f1] bg-[length:300%] bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(125,226,197,0.7)]">
+    <span className="bg-gradient-to-b from-[#59bb9f] via-[#92d4e2] to-[#bff0ed] bg-[length:300%] bg-clip-text text-transparent drop-shadow-[0_0_0px_rgba(125,226,197,0.7)] text-[56px]">
       Brighten Your Day
     </span>
   </motion.h1>
 
 </div>
-        <p className="text-white text-md font-light mb-6">
+        <p className="text-white text-[16px] font-light  mb-4">
           Our philosophy is built on providing the world's best cosmetic dental care, uniquely tailored to the individual.
         </p>
         <div className="flex flex-col sm:flex-row gap-4">
@@ -46,13 +45,13 @@ export default function HomeParallax() {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="p-4 border text-[14px] sm:text-[20px] border-[#1ab8b3] text-white rounded-md hover:bg-[#1ab8b3]/20 transition-all duration-300   hover:border-opacity-70 cursor-pointer"
+            className="p-4 border text-[14px] sm:text-[16px] border-[#1ab8b3] text-white rounded-md hover:bg-[#1ab8b3]/20 transition-all duration-300   hover:border-opacity-70 cursor-pointer"
           >
             Learn More
           </motion.button>
         </div>
       </motion.div>
-      <div className="sticky top-0 h-screen mt-[-8rem] ">
+      <div className="sticky top-0 h-screen -mt-[3rem] ">
         <ParallaxImage scrollYProgress={scrollYProgress} />
       </div>
     </div>
@@ -70,7 +69,7 @@ function ParallaxImage({ scrollYProgress }: { scrollYProgress: any }) {
 
   return (
     <motion.div
-      className="absolute inset-0 flex items-center justify-center"
+      className="absolute inset-0 flex items-center justify-center "
       style={{
         scale,
         // y: translateY,
@@ -84,7 +83,7 @@ function ParallaxImage({ scrollYProgress }: { scrollYProgress: any }) {
         loop
         playsInline
         // className=" w-[80vw] h-[80vh] object-cover rounded-3xl shadow-[0_60px_140px_60px_rgba(151,125,255,0.45)]"
-        className=" w-[90vw] h-[85vh] object-cover rounded-3xl shadow-gradient-custom"
+        className=" w-[82vw] h-[82vh] object-cover rounded-3xl shadow-gradient-custom"
       />
     </motion.div>
   );
