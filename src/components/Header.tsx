@@ -1,14 +1,23 @@
 import { useEffect, useState, Suspense } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { HiMenu, HiX } from "react-icons/hi";
 import Logo3D from "./Logo3D";
 import { motion, useScroll } from "framer-motion";
+
+const navLinks = [
+  { to: "/about", label: "About" },
+  { to: "/contact", label: "Contact" },
+  // { to: "/pricing", label: "Pricing" },
+  // { to: "/referals", label: "Referrals" },
+  { to: "/our-doctors", label: "Our doctors" },
+];
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const { scrollY } = useScroll();
   const [showHeader, setShowHeader] = useState(true);
   const [lastScroll, setLastScroll] = useState(0);
+  const location = useLocation();
 
   useEffect(() => {
     return scrollY.on("change", (latest) => {
@@ -20,6 +29,12 @@ export default function Header() {
       setLastScroll(latest);
     });
   }, [scrollY, lastScroll]);
+
+  // Brighter gradient for active (no blue, just #77e5e0 and #1ab8b3)
+  const gradientClass =
+    "bg-gradient-to-r from-[#77e5e0] to-[#77e5e0] bg-clip-text text-transparent brightness-100";
+  const hoverClass =
+    "hover:bg-gradient-to-r hover:from-[#77e5e0] hover:to-[#1ab8b3] hover:bg-clip-text hover:text-transparent transition-colors duration-300 hover:brightness-150";
 
   return (
     <motion.header
@@ -41,23 +56,18 @@ export default function Header() {
               <Logo3D />
             </Suspense>
           </Link>
-          <nav className="hidden md:flex items-center space-x-6 text-sm  font-medium">
-            <Link to="/about" className="hover:text-primary transition">
-              About
-            </Link>
-            <Link to="/pricing" className="hover:text-primary transition">
-              Pricing
-            </Link>
-            <Link to="/contact" className="hover:text-primary transition">
-              Contact
-            </Link>
-            <Link to="/referals" className="hover:text-primary transition">
-              Referrals
-            </Link>
-            <Link to="/our-doctors" className="hover:text-primary transition">
-              Our doctors
-            </Link>
-          
+          <nav className="hidden md:flex items-center space-x-6 text-[16px] font-semibold-500">
+            {navLinks.map((nav) => (
+              <Link
+                key={nav.to}
+                to={nav.to}
+                className={`${hoverClass} ${
+                  location.pathname === nav.to ? gradientClass : ""
+                }`}
+              >
+                {nav.label}
+              </Link>
+            ))}
           </nav>
         </div>
 
@@ -81,35 +91,18 @@ export default function Header() {
 
       {isOpen && (
         <div className="md:hidden px-6 pb-4 flex flex-col gap-3 bg-black">
-          <Link
-            to="/about"
-            onClick={() => setIsOpen(false)}
-            className="hover:text-purple-400"
-          >
-            About
-          </Link>
-          <Link
-            to="/pricing"
-            onClick={() => setIsOpen(false)}
-            className="hover:text-purple-400"
-          >
-            Pricing
-          </Link>
-          <Link
-            to="/contact"
-            onClick={() => setIsOpen(false)}
-            className="hover:text-purple-400"
-          >
-            Contact
-          </Link>
-          <Link
-            to="/referals"
-            onClick={() => setIsOpen(false)}
-            className="hover:text-purple-400"
-          >
-            Referrals
-          </Link>
-          
+          {navLinks.map((nav) => (
+            <Link
+              key={nav.to}
+              to={nav.to}
+              onClick={() => setIsOpen(false)}
+              className={`${hoverClass} ${
+                location.pathname === nav.to ? gradientClass : ""
+              }`}
+            >
+              {nav.label}
+            </Link>
+          ))}
           <Link to={"#"}>
             <motion.button
               whileHover={{ scale: 1.05 }}

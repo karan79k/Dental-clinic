@@ -30,7 +30,14 @@ export default function OurTreatmentsSlider() {
   const nextIndex = (current + 1) % data.length;
 
   const imageClasses = "absolute top-0 left-0 w-full h-full object-cover rounded-xl shadow-xl";
-  const transition = { duration: 0.8, ease: "easeInOut" };
+  
+  // New transition settings for smoother movement
+  const transition = { 
+    duration: 0.7, 
+    ease: "easeInOut", 
+    stiffness: 100, 
+    damping: 25 
+  };
 
   return (
     <div className="h-[130vh] bg-black flex items-center justify-center sm:pb-10">
@@ -70,31 +77,37 @@ export default function OurTreatmentsSlider() {
           <div className="absolute top-0 left-0 w-full h-full">
             {/* Left Image */}
             <motion.img
+              key={`left-${prevIndex}`}
               src={data[prevIndex].src}
               alt="Previous"
               className={`${imageClasses} z-10`}
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 0.4, rotate: -10, x: "-10%", scale: 0.9 }}
+              initial={{ opacity: 0, scale: 0.8, x: "-10%" }}
+              animate={{ opacity: 0.4, scale: 0.9, rotate: -10, x: "-10%" }}
+              exit={{ opacity: 0, scale: 0.8, x: "-15%" }}
               transition={transition}
             />
 
             {/* Center Image */}
             <motion.img
+              key={`center-${current}`}
               src={data[current].src}
               alt="Current"
-              className={`${imageClasses} shadow-2xl z-20`}
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, rotate: 0, x: "0%", scale: 1 }}
+              className={`${imageClasses} z-20 shadow-2xl`}
+              initial={{ opacity: 0, scale: 0.9, x: "0%" }}
+              animate={{ opacity: 1, scale: 1, rotate: 0, x: "0%" }}
+              exit={{ opacity: 0, scale: 0.9, x: "0%" }}
               transition={transition}
             />
 
             {/* Right Image */}
             <motion.img
+              key={`right-${nextIndex}`}
               src={data[nextIndex].src}
               alt="Next"
               className={`${imageClasses} z-10`}
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 0.4, rotate: 10, x: "10%", scale: 0.9 }}
+              initial={{ opacity: 0, scale: 0.8, x: "10%" }}
+              animate={{ opacity: 0.4, scale: 0.9, rotate: 10, x: "10%" }}
+              exit={{ opacity: 0, scale: 0.8, x: "15%" }}
               transition={transition}
             />
 
