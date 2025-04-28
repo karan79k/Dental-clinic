@@ -30,7 +30,7 @@ export default function Loader() {
             {/* Text */}
             <motion.div className="absolute z-40 flex items-center justify-center w-full h-screen">
               <div className="inline-flex items-baseline text-white text-4xl font-bold">
-                <h1 className="ml-34 relative -top-2">Dental</h1>
+                <h1 className="ml-32 relative -top-2">Dental</h1>
                 <div className="relative ml-4 w-[300px] h-[62px] overflow-hidden">
                   <AnimatePresence mode="sync">
                     <motion.h1

@@ -1,6 +1,7 @@
 import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface TeamMember {
   image: string;
@@ -58,19 +59,19 @@ export default function TeamCarousel() {
         {/* Header */}
         <div className="flex items-center shadow-gray-200 justify-between mb-10 -ml-7">
           <div>
-            <p className="text-sm -mb-4 text-blue-600">Meet your dentist</p>
-            <h2 className="text-3xl font-semibold text-gray-800">Our Team</h2>
-            <p className="text-gray-500 font-extralight text-[16px] -mt-[6px]">Experts in dental care</p>
+            <p className="text-sm text-blue-600">Meet your dentist</p>
+            <h2 className="text-4xl font-semibold text-gray-800">Our Team</h2>
+            <p className="text-gray-500 font-extralight text-[18px]">Experts in dental care</p>
           </div>
-          <a
-            href="/our-doctors"
+          <Link
+            to="/our-doctors"
             className="flex items-center gap-1 text-blue-600 font-medium transition-colors duration-200 hover:text-blue-800 group"
           >
             View All
             <span className="transition-transform duration-200 group-hover:translate-x-1">
               <ChevronRight className="w-5 h-5" />
             </span>
-          </a>
+          </Link>
         </div>
 
         {/* Keen Slider Carousel */}

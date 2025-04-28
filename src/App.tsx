@@ -12,6 +12,7 @@ import Footer from './components/Footer'
 import Book from './components/Book'
 import GetInTouch from './components/GetInTouch'
 import Loader from './components/Loader'
+import MobileLink from './components/MobileLink'
 import { useState, useEffect } from 'react'
 
 function App() {  
@@ -47,6 +48,7 @@ function App() {
 
       </Routes>
       <Book />
+      <MobileLink />
       <GetInTouch />
       <Footer />
     </Router>

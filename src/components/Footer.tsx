@@ -98,7 +98,7 @@ export default function Footer() {
           </div>
 
           {/* Column 3 - Useful Links */}
-          <div className="-ml-14">
+          <div className="-ml-18">
             <h4 className="text-primary mb-4" style={{ fontSize: "16px", fontWeight: 400 }}>
               Useful Links
             </h4>
@@ -122,7 +122,7 @@ export default function Footer() {
           </div>
 
           {/* Column 4 - Treatments */}
-          <div className="-ml-14">
+          <div className="-ml-22">
             <h4 className="text-primary mb-4" style={{ fontSize: "16px", fontWeight: 400 }}>
               Treatments
             </h4>
@@ -156,7 +156,7 @@ export default function Footer() {
           </div>
 
           {/* Column 5 - Subscribe */}
-          <div className="-ml-14">
+          <div className="-ml-28">
             <h4 className="text-primary mb-4" style={{ fontSize: "16px", fontWeight: 400 }}>
               Subscribe
             </h4>
