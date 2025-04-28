@@ -36,7 +36,7 @@ export default function Footer() {
   return (
     <footer className="bg-black px-6 py-10 text-sm border-t-[1px] border-t-[#1ab8b3b9]"> 
       <div className="container mx-auto space-y-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 text-gray-400">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 text-gray-400">
           {/* Column 1 - Contact Info */}
           <div>
             {/* <h4 className="text-white font-semibold mb-4">Logo</h4> */}
@@ -98,7 +98,7 @@ export default function Footer() {
           </div>
 
           {/* Column 3 - Useful Links */}
-          <div>
+          <div className="-ml-14">
             <h4 className="text-primary mb-4" style={{ fontSize: "16px", fontWeight: 400 }}>
               Useful Links
             </h4>
@@ -122,7 +122,7 @@ export default function Footer() {
           </div>
 
           {/* Column 4 - Treatments */}
-          <div>
+          <div className="-ml-14">
             <h4 className="text-primary mb-4" style={{ fontSize: "16px", fontWeight: 400 }}>
               Treatments
             </h4>
@@ -156,7 +156,7 @@ export default function Footer() {
           </div>
 
           {/* Column 5 - Subscribe */}
-          <div>
+          <div className="-ml-14">
             <h4 className="text-primary mb-4" style={{ fontSize: "16px", fontWeight: 400 }}>
               Subscribe
             </h4>
@@ -167,11 +167,13 @@ export default function Footer() {
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="w-full p-2 rounded-md bg-black/10 outline focus:ring-2 focus:ring-violet-500"
+                className="w-full p-2  rounded-md bg-black/10 outline focus:ring-2 focus:ring-violet-500"
               />
-              <button className="bg-primary text-white px-4 py-2 rounded-md hover:bg-violet-600 transition">
-                Subscribe
-              </button>
+                <button
+                  className="cursor-pointer border-[1px] border-[#1AB8B3] text-[#1AB8B3] px-4 py-2 rounded-md transition outline-none focus:outline-[#1AB8B3] hover:bg-[#1AB8B3] hover:text-white"
+                >
+                  Subscribe
+                </button>
             </div>
             <p className="text-xs text-gray-500">
               By subscribing, you agree to our Privacy Policy and consent to

@@ -1,79 +1,98 @@
-import { Link } from "react-router-dom";
-interface TeamMember {
-  image: string;
-  name: string;
-  specificaiton: string;
-  text: string;
-}
+import { motion } from "framer-motion";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
+import "swiper/css";
+import { ArrowRight } from "lucide-react"; // optional for arrow icon, or use SVG
 
-interface NormalCardProps extends TeamMember {}
-
-const team: TeamMember[] = [
+const teamMembers = [
   {
-    image: "/Images/cd-4.png",
-    name: "Dr Philip Church",
-    specificaiton: "Dentist",
-    text: "Implants and Sedation",
+    name: "Dr. Philip Church",
+    role: "Dentist",
+    specialty: "Owner | Implants & Sedation",
+    image: "/images/philip.png",
   },
   {
-    image: "/Images/cd-2.png",
-    name: "Dr Jane Doe",
-    specificaiton: "Oral Surgeon",
-    text: "Facial Reconstruction Expert",
+    name: "Dr. Lindsey Church",
+    role: "Dentist",
+    specialty: "Orthodontics",
+    image: "/images/lindsey.png",
   },
   {
-    image: "/Images/cd-3.png",
-    name: "Dr Alan Smith",
-    specificaiton: "Orthodontist",
-    text: "Braces and Aligners",
+    name: "Dr. Jonathan Fitzpatrick",
+    role: "Dentist",
+    specialty: "Smile Makeovers",
+    image: "/images/jonathan.png",
   },
-  {
-    image: "/Images/cd-1.png",
-    name: "Dr Nina Patel",
-    specificaiton: "Prosthodontist",
-    text: "Crowns and Implants",
-  },
+  // Add more if needed
 ];
 
-function NormalCard({ image, name, specificaiton, text }: NormalCardProps) {
+export default function TeamCarousel() {
   return (
-    <div className="card-container">
-      <img src={image} alt={name} className="rounded-md w-[70vh] bg-cover" />
-      <div className="content mt-6 flex flex-col gap-0">
-        <div className="text-lg font-semibold">{name}</div>
-        <div className="text-md font-medium text-[#1AB8B3]">{specificaiton}</div>
-        <div className="text-md font-light mt-4">{text}</div>
-      </div>
-    </div>
-  );
-}
+    <div className="max-w-7xl mx-auto px-4 py-12">
+      <div className="flex items-center justify-between mb-8">
+        <div>
+          <motion.h2
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-4xl font-semibold"
+          >
+            Our Team
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-gray-500"
+          >
+            Experts in dental care
+          </motion.p>
+        </div>
 
-export default function OurTeam() {
-  return (
-    <div className="min-h-screen  bg-black text-white pb-20">
-      <div className="container mx-auto flex flex-col gap-y-[-30px] md:flex-row gap-12">
-        <div className="md:w-2/5 flex flex-col justify-start space-y-6 text-left">
-          <p className="text-primary text-sm tracking-wider pl-1">
-            Meet your doctors
-          </p>
-          <h3 className="text-white">Our Doctors</h3>
-          <p className="text-white/80 ml-1">
-            We put our long experience at your disposal
-          </p>
-          <div>
-            <Link to='/our-doctors'>
-              <button className="relative cursor-pointer border border-secondary text-primary px-12 py-4 mt-6 rounded-md transition-all duration-200 hover:bg-primary hover:text-primary hover:scale-105">
-              View All
-              </button>
-            </Link>
-          </div>
-        </div>
-        <div className="grid grid-cols-1 gap-x-12 gap-y-18 sm:grid-cols-2 gap-8">
-          {team.map((member, i) => (
-            <NormalCard key={i} {...member} />
-          ))}
-        </div>
+        <motion.button
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          className="flex items-center gap-2 text-blue-600 font-medium hover:underline"
+        >
+          View All <ArrowRight size={18} />
+        </motion.button>
       </div>
+
+      <Swiper
+        modules={[Autoplay]}
+        spaceBetween={30}
+        slidesPerView={3}
+        autoplay={{ delay: 2500, disableOnInteraction: false }}
+        loop={true}
+        breakpoints={{
+          640: { slidesPerView: 1 },
+          768: { slidesPerView: 2 },
+          1024: { slidesPerView: 3 },
+        }}
+      >
+        {teamMembers.map((member, index) => (
+          <SwiperSlide key={index}>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-xl overflow-hidden shadow-lg"
+            >
+              <img
+                src={member.image}
+                alt={member.name}
+                className="w-full h-80 object-cover"
+              />
+              <div className="p-4">
+                <h3 className="text-lg font-semibold">{member.name}</h3>
+                <p className="text-gray-600 text-sm">{member.role}</p>
+                <p className="text-gray-800 text-sm mt-1">{member.specialty}</p>
+              </div>
+            </motion.div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </div>
   );
 }

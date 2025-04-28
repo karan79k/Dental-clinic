@@ -33,8 +33,8 @@ export default function GetInTouch() {
         Join our Community
       </motion.h2>
 
-      <div className="mt-[160px] w-full max-w-xl text-center">
-        <p className="text-gray-300 mb-6 text-[16px]">
+      <div className="pt-38 max-w-[768px] text-center">
+        <p className="text-gray-300 mb-6 text-[17px]">
           Don&apos;t worry — we won&apos;t spam you with countless emails or texts.
           Stay in touch and receive VIP offers and first-access to our events!
         </p>
@@ -44,13 +44,13 @@ export default function GetInTouch() {
             <input
               type="email"
               placeholder="Enter your email"
-              className="w-[360px] h-[40px] px-4 rounded-[8px] font-light text-[16px] text-white outline focus:ring-2 focus:ring-violet-500"
+              className="w-[360px] h-[48px] px-4 rounded-[8px] font-light text-[16px] text-white outline focus:ring-2 focus:ring-violet-500"
             />
-            <button className="bg-primary text-[16px] fonr-light text-white w-[104px] h-[42px] px-[3px] py-[4px] rounded-md hover:bg-violet-600 transition">
+            <button className="bg-primary text-[16px] fonr-light text-white w-[105px] h-[48px] px-[3px] py-[4px] rounded-md cursor-pointer">
               Subscribe
             </button>
           </div>
-          <p className="text-gray-500 text-[16px]">
+          <p className="text-gray-500 text-[13px]">
             By clicking Sign Up you&apos;re confirming that you agree with our Terms
             and Conditions.
           </p>
