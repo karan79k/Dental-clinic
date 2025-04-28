@@ -56,7 +56,7 @@ export default function TeamCarousel() {
     <section className="py-12 pb-30 bg-gray-50 relative">
       <div className="max-w-6xl mx-auto relative">
         {/* Header */}
-        <div className="flex items-center shadow-gray-200 justify-between mb-8">
+        <div className="flex items-center shadow-gray-200 justify-between mb-10 -ml-7">
           <div>
             <p className="text-sm -mb-4 text-blue-600">Meet your dentist</p>
             <h2 className="text-3xl font-semibold text-gray-800">Our Team</h2>
@@ -94,7 +94,7 @@ export default function TeamCarousel() {
         </div>
 
         {/* Navigation Arrows */}
-        <div className="absolute mt-10 right-38 flex gap-3 z-10">
+        <div className="absolute mt-10 right-6 flex gap-3 z-10">
           <button
             onClick={() => instanceRef.current?.prev()}
             className="bg-white shadow-md p-2 rounded-full"
