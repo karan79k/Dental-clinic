@@ -12,7 +12,7 @@ export default function GetInTouch() {
   const opacity = useTransform(scrollYProgress, [0, 1], [0, 1]);
 
   return (
-    <div className="relative">
+    <div className="relative -pb-8">
       {/* <InfiniteWordsStripe/> */}
       <div
       ref={ref}
