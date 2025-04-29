@@ -5,9 +5,9 @@ import Logo3D from "./Logo3D";
 import { motion, useScroll } from "framer-motion";
 
 const navLinks = [
-  { to: "/about", labelKey: "about" },
-  { to: "/contact", labelKey: "contact" },
-  { to: "/our-doctors", labelKey: "ourDoctors" },
+  { to: "/about", labelKey: "About" },
+  { to: "/contact", labelKey: "Contact" },
+  { to: "/our-doctors", labelKey: "Our Doctors" },
 ];
 
 export default function Header() {
