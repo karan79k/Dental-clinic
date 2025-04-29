@@ -50,12 +50,12 @@ export default function DownloadSection() {
         <div className="relative w-[280px] h-[500px]">
           {/* Gradient Shadow */}
           <div className="absolute -inset-4 rounded-3xl bg-gradient-to-r from-[#77e5e0] via-[#1ab8b3] to-[#1a4578] blur-xl opacity-50"></div>
-          <div className="border-8 border-[#1ab8b3] rounded-3xl p-2 relative bg-white/10 shadow-2xl backdrop-blur-md">
-            <div className="w-full flex content-center items-center h-full bg-black rounded-2xl overflow-hidden">
+          <div className="border-8 border-[#1ab8b3] rounded-3xl relative bg-white/10 shadow-2xl backdrop-blur-md">
+            <div className="w-full h-full flex items-center justify-center rounded-2xl overflow-hidden">
               <img
                 src="https://cdn.appdesign.dev/wp-content/uploads/2019/04/disen%CC%83o-app-para-dentistas.png"
                 alt="App Screenshot"
-                className="object-cover align-middle w-[300px] h-[500px] opacity-100"
+                className="object-cover  w-full h-[450px]"
               />
             </div>
           </div>

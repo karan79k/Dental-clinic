@@ -42,7 +42,7 @@ export default function Footer() {
             {/* <h4 className="text-white font-semibold mb-4">Logo</h4> */}
             <Link to="/" >
               <img
-                src={"/Images/logo-2.png"}
+                src={"/Images/logo-3.png"}
                 alt="Logo"
                 className="h-8 sm:h-10 md:h-12 w-auto object-contain"
               />
