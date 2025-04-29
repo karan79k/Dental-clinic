@@ -3,13 +3,12 @@ import { Link, useLocation } from "react-router-dom";
 import { HiMenu, HiX } from "react-icons/hi";
 import Logo3D from "./Logo3D";
 import { motion, useScroll } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 const navLinks = [
-  { to: "/about", label: "About" },
-  { to: "/contact", label: "Contact" },
-  // { to: "/pricing", label: "Pricing" },
-  // { to: "/referals", label: "Referrals" },
-  { to: "/our-doctors", label: "Our doctors" },
+  { to: "/about", labelKey: "about" },
+  { to: "/contact", labelKey: "contact" },
+  { to: "/our-doctors", labelKey: "ourDoctors" },
 ];
 
 export default function Header() {
@@ -18,6 +17,7 @@ export default function Header() {
   const [showHeader, setShowHeader] = useState(true);
   const [lastScroll, setLastScroll] = useState(0);
   const location = useLocation();
+  const { t, i18n } = useTranslation();
 
   useEffect(() => {
     return scrollY.on("change", (latest) => {
@@ -30,7 +30,6 @@ export default function Header() {
     });
   }, [scrollY, lastScroll]);
 
-  // Brighter gradient for active (no blue, just #77e5e0 and #1ab8b3)
   const gradientClass =
     "bg-gradient-to-r from-[#77e5e0] to-[#77e5e0] bg-clip-text text-transparent brightness-100";
   const hoverClass =
@@ -65,11 +64,13 @@ export default function Header() {
                   location.pathname === nav.to ? gradientClass : ""
                 }`}
               >
-                {nav.label}
+                {t(nav.labelKey)}
               </Link>
             ))}
           </nav>
         </div>
+
+      
 
         <div className="hidden md:block">
           <motion.button
@@ -77,7 +78,7 @@ export default function Header() {
             whileTap={{ scale: 0.95 }}
             className="py-3 bg-gradient-custom cursor-pointer text-white font-normal rounded-md w-[200px] "
           >
-            Book Appointment
+            {t("bookAppointment")}
           </motion.button>
         </div>
 
@@ -100,7 +101,7 @@ export default function Header() {
                 location.pathname === nav.to ? gradientClass : ""
               }`}
             >
-              {nav.label}
+              {t(nav.labelKey)}
             </Link>
           ))}
           <Link to={"#"}>
@@ -109,7 +110,7 @@ export default function Header() {
               whileTap={{ scale: 0.95 }}
               className="p-4 border text-[16px] border-[#1ab8b3] text-white rounded-md hover:bg-[#1ab8b3]/20 transition-all duration-300 w-[200px] hover:border-opacity-70 cursor-pointer"
             >
-              Book Appointment
+              {t("bookAppointment")}
             </motion.button>
           </Link>
         </div>

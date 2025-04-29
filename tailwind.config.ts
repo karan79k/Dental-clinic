@@ -1,5 +1,5 @@
 import type { Config } from "tailwindcss";
-
+import rtl from 'tailwindcss-rtl';
 const config: Config = {
   content: [
     "./app/**/*.{js,ts,jsx,tsx}",
@@ -20,7 +20,7 @@ const config: Config = {
         roboto: ['var(--font-roboto)', 'sans-serif'],
       },
     },
-  },
+  },plugins: [rtl()],
 
 };
 
