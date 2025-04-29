@@ -170,7 +170,7 @@ export default function Footer() {
                 className="w-full p-2  rounded-md bg-black/10 outline focus:ring-2 focus:ring-violet-500"
               />
                 <button
-                  className="cursor-pointer border-[1px] border-[#1AB8B3] text-[#1AB8B3] px-4 py-2 rounded-md transition outline-none focus:outline-[#1AB8B3] hover:bg-[#1AB8B3] hover:text-white"
+                  className="cursor-pointer border-[1px] border-[#1AB8B3] text-[#1AB8B3] px-4 py-2  rounded-md transition outline-none focus:outline-[#1AB8B3] hover:bg-[#1AB8B3] hover:text-white"
                 >
                   Subscribe
                 </button>

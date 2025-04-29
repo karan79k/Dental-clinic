@@ -101,8 +101,12 @@ function SlideImage({
         zIndex: index,
       }}
     >
-      <div className="pt-4 w-full h-full flex items-center justify-center">
+      <div className="pt-4 w-full h-full flex items-center justify-center  ">
+        {/* Parent Div with Gradient Box Shadow */}
         <div className="relative w-[120%] h-[90%] rounded-2xl overflow-hidden">
+          {/* Gradient Shadow */}
+          <div className="absolute -inset-4 rounded-2xl bg-gradient-to-r from-[#77e5e0] via-[#1ab8b3] to-[#1a4578] blur-xl opacity-50 pointer-events-none z-0"></div>
+
           {/* Left Image */}
           <div className="absolute inset-0 w-1/2 overflow-hidden">
             <img
@@ -119,7 +123,6 @@ function SlideImage({
               className="object-cover w-full h-full brightness-75 transition-transform duration-300"
             />
           </div>
-        
         </div>
       </div>
     </motion.div>

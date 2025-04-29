@@ -78,7 +78,7 @@ function ParallaxImage({ scrollYProgress }: { scrollYProgress: any }) {
       style={{
         boxShadow:
         "0 0 300px 180px rgba(26, 184, 179, 0.38), 0 0 480px 240px rgba(191, 240, 237, 0.18)",
-        filter: "blur(0.3px)",
+        filter: "blur(0.5px)",
       }}
       />
     </motion.div>

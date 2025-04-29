@@ -37,7 +37,7 @@ export default function Logo3D() {
       {/* Static Logo */}
       <div className="h-18 w-18  md:h-28 md:w-28 lg:h-32 lg:w-32">
         <img 
-          src="/Images/logo-4.png" 
+          src="/Images/logo-2.png" 
           alt="Logo" 
           className="w-full h-full object-contain text-gray-200"
         />
