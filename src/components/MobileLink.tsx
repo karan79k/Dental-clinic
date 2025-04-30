@@ -47,7 +47,7 @@ export default function DownloadSection() {
           className="w-[280px] flex items-center justify-center gap-3 py-4 bg-gradient-custom text-white text-center font-semibold rounded-2xl shadow-lg transition-all duration-300"
         >
           <img src="/Images/appstore.png" alt="App Store" className="w-8 h-8" />
-          Download on App Store
+          Download on Apple Store
         </motion.a>
       </div>
     </div>

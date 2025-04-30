@@ -95,7 +95,7 @@ function SlideImage({
 
   return (
     <motion.div
-      className="absolute inset-0 flex items-center justify-center"
+      className="absolute inset-0 flex items-center justify-center "
       style={{
         y: isFirst ? "0%" : y,
         zIndex: index,
@@ -105,7 +105,7 @@ function SlideImage({
         {/* Parent Div with Gradient Box Shadow */}
         <div className="relative w-[120%] h-[90%] rounded-2xl overflow-hidden">
           {/* Gradient Shadow */}
-          <div className="absolute -inset-4 rounded-2xl bg-gradient-to-r from-[#77e5e0] via-[#1ab8b3] to-[#1a4578] blur-xl opacity-50 pointer-events-none z-0"></div>
+          <div className="absolute inset-4 rounded-2xl bg-gradient-to-r from-[#77e5e0] via-[#1ab8b3] to-[#1a4578] blur-xl opacity-50 pointer-events-none z-0"></div>
 
           {/* Left Image */}
           <div className="absolute inset-0 w-1/2 overflow-hidden">
