@@ -2,19 +2,19 @@ import NormalCard from "./NormalCard";
 
 const team = [
   {
-    image: "/Images/cd-1.png",
+    image: "/Images/cd-1.jpg",
     name: "Dr Philip Church",
     specificaiton: "Dentist",
     text: "Implants and Sedation",
   },
   {
-    image: "/Images/cd-2.png",
+    image: "/Images/cd-2.jpg",
     name: "Dr Jane Doe",
     specificaiton: "Oral Surgeon",
     text: "Facial Reconstruction Expert",
   },
   {
-    image: "/Images/cd-3.png",
+    image: "/Images/cd-3.jpg",
     name: "Dr Alan Smith",
     specificaiton: "Orthodontist",
     text: "Braces and Aligners",
@@ -38,13 +38,13 @@ const team = [
     text: "Facial Reconstruction Expert",
   },
   {
-    image: "/Images/cd-7.png",
+    image: "/Images/cd-7.jpg",
     name: "Dr Alan Smith",
     specificaiton: "Orthodontist",
     text: "Braces and Aligners",
   },
   {
-    image: "/Images/cd-8.png",
+    image: "/Images/cd-8.jpg",
     name: "Dr Nina Patel",
     specificaiton: "Prosthodontist",
     text: "Crowns and Implants",
@@ -56,19 +56,19 @@ const team = [
     text: "Crowns and Implants",
   },
   {
-    image: "/Images/cd-10.png",
+    image: "/Images/cd-10.jpg",
     name: "Dr Nina Patel",
     specificaiton: "Prosthodontist",
     text: "Crowns and Implants",
   },
   {
-    image: "/Images/cd-11.png",
+    image: "/Images/cd-11.jpg",
     name: "Dr Nina Patel",
     specificaiton: "Prosthodontist",
     text: "Crowns and Implants",
   },
   {
-    image: "/Images/cd-12.png",
+    image: "/Images/cd-12.jpg",
     name: "Dr Nina Patel",
     specificaiton: "Prosthodontist",
     text: "Crowns and Implants",

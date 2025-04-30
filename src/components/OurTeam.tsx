@@ -12,25 +12,25 @@ interface TeamMember {
 
 const team: TeamMember[] = [
   {
-    image: "/Images/cd-4.png",
+    image: "/Images/cd-1.jpg",
     name: "Dr Philip Church",
     specification: "Dentist",
     text: "Implants and Sedation",
   },
   {
-    image: "/Images/cd-2.png",
+    image: "/Images/cd-2.jpg",
     name: "Dr Jane Doe",
     specification: "Oral Surgeon",
     text: "Facial Reconstruction Expert",
   },
   {
-    image: "/Images/cd-3.png",
+    image: "/Images/cd-3.jpg",
     name: "Dr Alan Smith",
     specification: "Orthodontist",
     text: "Braces and Aligners",
   },
   {
-    image: "/Images/cd-1.png",
+    image: "/Images/cp-1.jpg",
     name: "Dr Nina Patel",
     specification: "Prosthodontist",
     text: "Crowns and Implants",
@@ -78,13 +78,22 @@ export default function TeamCarousel() {
         <div ref={sliderRef} className="keen-slider pt-4">
           {team.map((member, index) => (
             <div key={index} className="keen-slider__slide">
-              <div className="w-full rounded-xl overflow-hidden text-right">
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className="mx-auto p-0 mb-2 rounded-lg w-80 object-cover"
-                />
-                <div className="pr-6 leading-tight">
+              <div className="w-full rounded-t-xl overflow-hidden text-right">
+                <div className="relative">
+                  {/* Shadow Overlay */}
+                  <div className="absolute inset-0 z-10"></div>
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="mx-auto p-0 mb-2 rounded-t-lg w-80 object-cover filter hover:brightness-105 transition-all duration-300"
+                    style={{
+                      boxShadow: '0 4px 15px rgba(0,0,0,0.1)',
+                      WebkitBackdropFilter: 'blur(5px)',
+                      backdropFilter: 'blur(5px)'
+                    }}
+                  />
+                </div>
+                <div className="pr-6 leading-tight relative z-20 pb-4">
                   <h3 className="text-xl font-semibold text-gray-800 -mb-2">{member.name}</h3>
                   <p className="text-blue-400">{member.specification}</p>
                   <p className="text-gray-400 text-sm">{member.text}</p>
