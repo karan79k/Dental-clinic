@@ -41,7 +41,7 @@ export default function Logo3D() {
           alt="Logo" 
           className="w-full h-full object-contain"
           style={{ 
-        filter: 'brightness(2) contrast(2) drop-shadow(0 0 12px #08E8DE)', 
+        filter: 'brightness(1) contrast(1.5) drop-shadow(0 0 12px #08E8DE)', 
         background: 'transparent' 
           }}
         />
