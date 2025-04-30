@@ -31,7 +31,7 @@ export default function Header() {
   const gradientClass =
     "bg-gradient-to-r from-[#77e5e0] to-[#77e5e0] bg-clip-text text-transparent brightness-100";
   const hoverClass =
-    "hover:bg-gradient-to-r hover:from-[#77e5e0] hover:to-[#1ab8b3] hover:bg-clip-text hover:text-transparent transition-colors duration-300 hover:brightness-150";
+    "hover:bg-gradient-to-r hover:from-[#77e5e0] hover:to-[#1AB8B3] hover:bg-clip-text hover:text-transparent transition-colors duration-300 hover:brightness-150";
 
   return (
     <motion.header
@@ -76,7 +76,7 @@ export default function Header() {
             whileTap={{ scale: 0.95 }}
             className="py-3 bg-gradient-custom cursor-pointer text-white font-normal rounded-md w-[200px] "
           >
-            bookAppointment
+            Book Appointment
           </motion.button>
         </div>
 
@@ -108,7 +108,7 @@ export default function Header() {
               whileTap={{ scale: 0.95 }}
               className="p-4 border text-[16px] border-[#1ab8b3] text-white rounded-md hover:bg-[#1ab8b3]/20 transition-all duration-300 w-[200px] hover:border-opacity-70 cursor-pointer"
             >
-              bookAppointment
+              Book Appointment
             </motion.button>
           </Link>
         </div>

@@ -35,11 +35,15 @@ export default function Logo3D() {
   return (
     <div className="flex items-center"> 
       {/* Static Logo */}
-      <div className="h-18 w-18  md:h-28 md:w-28 lg:h-32 lg:w-32">
+      <div className="h-18 w-20 md:h-28 md:w-28 lg:h-32 lg:w-32 rounded-full flex items-center justify-center">
         <img 
-          src="/Images/logo-22335.png" 
+          src="/Images/logo-4.png" 
           alt="Logo" 
-          className="w-full h-full object-contain text-gray-200"
+          className="w-full h-full object-contain"
+          style={{ 
+        filter: 'brightness(2) contrast(2) drop-shadow(0 0 12px #08E8DE)', 
+        background: 'transparent' 
+          }}
         />
       </div>
 

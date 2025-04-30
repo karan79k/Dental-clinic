@@ -43,7 +43,7 @@ export default function Book() {
             ease: [0.25, 0.8, 0.25, 1], // Smoother easing curve
           }}
         >
-          <h3 className="mb-4 text-center text-[56px]">Book an appointment today</h3>
+          <h3 className="mb-4 text-center text-[56px]">Quality Clinics</h3>
           <p className="mb-4 text-center text-[18px]">
             Start your smile journey at Millersneuk Dental Practice, Lenzie.
           </p>
