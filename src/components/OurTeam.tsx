@@ -46,26 +46,24 @@ export default function TeamCarousel() {
     },
     created(slider) {
       setInterval(() => {
-        if (slider) {
-          slider.next();
-        }
-      }, 2500); // autoplay like swiper
+        slider?.next();
+      }, 3000);
     },
   });
 
   return (
-    <section className="py-12 pb-30 bg-gray-50 relative">
-      <div className="max-w-6xl mx-auto relative">
+    <section className="py-12 bg-gray-50 relative">
+      <div className="max-w-8xl mx-auto relative">
         {/* Header */}
-        <div className="flex items-center shadow-gray-200 justify-between mb-10 -ml-7">
-          <div>
+        <div className="flex items-center justify-between mb-10 px-8">
+          <div className="px-9">
             <p className="text-sm text-blue-600">Meet your dentist</p>
             <h2 className="text-4xl font-semibold text-gray-800">Our Team</h2>
             <p className="text-gray-500 font-extralight text-[18px]">Experts in dental care</p>
           </div>
           <Link
             to="/our-doctors"
-            className="flex items-center gap-1 text-blue-600 font-medium transition-colors duration-200 hover:text-blue-800 group"
+            className="flex items-center gap-1 px-8 text-blue-600 font-medium transition-colors duration-200 hover:text-blue-800 group"
           >
             View All
             <span className="transition-transform duration-200 group-hover:translate-x-1">
@@ -74,29 +72,22 @@ export default function TeamCarousel() {
           </Link>
         </div>
 
-        {/* Keen Slider Carousel */}
-        <div ref={sliderRef} className="keen-slider pt-4">
+        {/* Carousel */}
+        <div ref={sliderRef} className="keen-slider px-8">
           {team.map((member, index) => (
             <div key={index} className="keen-slider__slide">
-              <div className="w-full rounded-t-xl overflow-hidden text-right">
-                <div className="relative">
-                  {/* Shadow Overlay */}
-                  <div className="absolute inset-0 z-10"></div>
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="mx-auto p-0 mb-2 rounded-t-lg w-80 object-cover filter hover:brightness-105 transition-all duration-300"
-                    style={{
-                      boxShadow: '0 4px 15px rgba(0,0,0,0.1)',
-                      WebkitBackdropFilter: 'blur(5px)',
-                      backdropFilter: 'blur(5px)'
-                    }}
-                  />
-                </div>
-                <div className="pr-6 leading-tight relative z-20 pb-4">
-                  <h3 className="text-xl font-semibold text-gray-800 -mb-2">{member.name}</h3>
-                  <p className="text-blue-400">{member.specification}</p>
-                  <p className="text-gray-400 text-sm">{member.text}</p>
+              <div className="relative group w-[300px] h-[460px] overflow-hidden rounded-xl shadow-lg mx-auto">
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  className="w-full h-full object-cover transition-transform duration-1000 ease-[cubic-bezier(0.25, 1, 0.5, 1)] group-hover:scale-105"
+                />
+
+                {/* Hover Overlay Panel */}
+                <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-white/95 via-white/60 to-transparent backdrop-blur-lg p-4 transform translate-y-full group-hover:translate-y-1/2 transition-all duration-1000 ease-[cubic-bezier(0.25, 1, 0.5, 1)] z-20 flex flex-col justify-center items-center text-center">
+                  <h3 className="text-lg font-semibold text-gray-800">{member.name}</h3>
+                  <p className="text-blue-500 text-sm">{member.specification}</p>
+                  <p className="text-gray-700 text-sm mt-1">{member.text}</p>
                 </div>
               </div>
             </div>

@@ -3,10 +3,14 @@ import { motion } from "framer-motion";
 export default function DownloadSection() {
   return (
     <div className="relative overflow-hidden min-h-screen flex flex-col md:flex-row items-center justify-evenly p-8 bg-white">
-      {/* Left Div */}
-      <div className="flex justify-center items-center w-full md:w-[45%] z-10 mb-8 md:mb-0">
-        <div className="relative ">
-          <div className="w-full h-full flex items-center justify-center rounded-2xl overflow-hidden">
+      {/* Left Div - Mobile App Preview */}
+      <div className="relative w-[280px] h-[500px]">
+        {/* Gradient Shadow */}
+        <div className="absolute inset-6 rounded-3xl bg-gradient-to-r from-[#95ebe6] via-[#1ab8b3] to-[#4789da] blur-xl opacity-50"></div>
+        
+        {/* Mobile Frame */}
+        <div className=" rounded-3xl  relative bg-white/10 shadow-10xl backdrop-blur-sm">
+          <div className="w-full h-full flex items-center justify-center rounded-2xl overflow-hidden ">
             <img
               src="https://cdn.appdesign.dev/wp-content/uploads/2019/04/disen%CC%83o-app-para-dentistas.png"
               alt="App Screenshot"
@@ -16,7 +20,7 @@ export default function DownloadSection() {
         </div>
       </div>
 
-      {/* Right Div */}
+      {/* Right Div - Download Links */}
       <div className="flex flex-col items-center w-full md:w-[45%] gap-8 z-10">
         <div className="text-center mb-2">
           <h2 className="text-3xl font-bold text-gray-800 mb-2">
@@ -26,6 +30,7 @@ export default function DownloadSection() {
             Download our dental clinic app for easy appointment booking, reminders, and more!
           </p>
         </div>
+
         <motion.a
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
