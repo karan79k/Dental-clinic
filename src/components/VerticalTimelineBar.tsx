@@ -14,49 +14,43 @@ type TimelineItem = {
 const timelineData: TimelineItem[] = [
   {
     id: 1,
-    year: '2020',
+    year: '2008',
     title: 'Company Founded',
-    description: 'Our journey began with a small team and a big vision to transform the industry.',
+    description: 'Quality Clinics is a Saudi institution based in Mecca. Established in 2008, it has six branches in Mecca and Jeddah. These clinics specialize in providing the best medical services in various dental, dermatology, and cosmetic specialties. It is distinguished by the presence of an elite group of skilled and experienced doctors, under the supervision of the orthodontist and maxillofacial consultant, Dr. Muhammad Sulaiman Baghrib, who is ranked first in the Kingdom in Invisalign orthodontics according to the official Invisalign website, and who obtained the German Board in Dentistry in 1992, in addition to the German Board in Orthodontics in 1998.',
   },
   {
     id: 2,
     year: '2021',
-    title: 'Product Launch',
-    description: 'After months of development, we launched our flagship product to critical acclaim.',
+    title: 'Why Quality ?',
+    description: "At Quality Dental and Dermatology Clinics, we are distinguished by our over twenty years of experience in providing the best medical services in various dental, dermatology, and cosmetic specialties. We utilize the latest medical technology and equipment, along with the finest materials and tools, to ensure a healthy and satisfying smile for our clients. We are distinguished by the presence of an elite group of skilled, competent and experienced doctors, and the presence of specialists in various dental specialties: Children's Dentistry - Prosthodontics - Root Canal Treatment - Orthodontics; under the supervision of orthodontic consultant Dr. Mohammed Baghraib, ranked number one in the Kingdom for Invisalign braces. We also offer cosmetic services in the fields of dermatology, cosmetology, and laser, using specialized laser techniques and skin and hair treatment to achieve the best results for our clients, offering the highest levels of luxury and elegance they deserve.",
     image:"https://plus.unsplash.com/premium_photo-1674179008328-c201db47a0bb?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     button:<Button/>
   },
+
   {
     id: 3,
-    year: '2022',
-    title: 'International Expansion',
-    description: 'We expanded our operations to Europe and Asia, establishing new offices in key markets.',
+    year: '2023',
+    title: 'Vision',
+    description: 'To be the first choice for those seeking accurate diagnosis and quality treatment in a safe, sterile environment, under the care of expert hands, and using the latest technologies. Quality is the primary standard for our services, not an optional extra.',
+    image:"https://plus.unsplash.com/premium_photo-1681997162401-a65011496a7c?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    button:<Button/>
 
   },
   {
     id: 4,
-    year: '2023',
-    title: 'Major Partnership',
-    description: 'Formed strategic alliance with leading industry players to enhance our product ecosystem.',
-    image:"https://plus.unsplash.com/premium_photo-1681997162401-a65011496a7c?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    button:<Button/>
+    year: 'Our message',
+    title: 'Our message',
+    description: 'We strive to satisfy our clients, meet all their needs under one roof, and provide them with the highest levels of healthcare. We ensure that healthcare meets the latest international standards and is delivered using the latest technology under the supervision of a team of consultants and specialists from international universities.',
 
   },
-  {
-    id: 5,
-    year: '2024',
-    title: 'Innovation Award',
-    description: 'Received industry recognition for our groundbreaking approach and technological innovations.',
-
-  },
-  {
-    id: 6,
-    year: '2025',
-    title: 'New Headquarters',
-    description: 'Moved into our new sustainable headquarters designed to foster collaboration and creativity.',
-    image:"https://plus.unsplash.com/premium_photo-1681997162401-a65011496a7c?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    button:<Button/>
-  },
+  // {
+  //   id: 5,
+  //   year: '2025',
+  //   title: 'New Headquarters',
+  //   description: 'Moved into our new sustainable headquarters designed to foster collaboration and creativity.',
+  //   image:"https://plus.unsplash.com/premium_photo-1681997162401-a65011496a7c?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  //   button:<Button/>
+  // },
 ];
 
 const VerticalScrollTimeline = () => {
@@ -125,10 +119,10 @@ const VerticalScrollTimeline = () => {
 
         {/* Right Content */}
         <div className="col-span-5 pl-4 text-left ">
-          <p className={`text-2xl font-semibold  mb-2 ${isActive ? 'text-white' : 'text-gray-900'}`}>
+          <p className={`text-2xl font-normal  mb-2 ${isActive ? 'text-white' : 'text-gray-900'}`}>
             {item.title}
           </p>
-          <p className={`text-gray-600 text-xs md:text-xl ${isActive ? 'text-white' : 'text-gray-900'}`}>{item.description}</p>
+          <p className={`font-extralight text-[15px] pr-2 ${isActive ? 'text-white' : 'text-gray-900'}`}>{item.description}</p>
 
           <div className={`py-4 ${isActive ? '' : 'opacity-50 pointer-events-none'}`}>{item.button}</div>
           {item.image && (

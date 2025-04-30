@@ -2,6 +2,8 @@ import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { useState } from "react";
 
 interface TeamMember {
   image: string;
@@ -42,17 +44,19 @@ export default function TeamCarousel() {
     loop: true,
     slides: {
       perView: 3,
-      spacing: 30,
+      spacing: -60,
     },
     created(slider) {
       setInterval(() => {
         slider?.next();
-      }, 3000);
+      }, 5000);
     },
   });
 
+  const [hoverIndex, setHoverIndex] = useState<number | null>(null);
+
   return (
-    <section className="py-12 bg-gray-50 relative">
+    <section className="py-12 bg-gray-50 relative w-full min-h-100 pb-40">
       <div className="max-w-8xl mx-auto relative">
         {/* Header */}
         <div className="flex items-center justify-between mb-10 px-8">
@@ -73,29 +77,54 @@ export default function TeamCarousel() {
         </div>
 
         {/* Carousel */}
-        <div ref={sliderRef} className="keen-slider px-8">
+        <div ref={sliderRef} className="keen-slider">
           {team.map((member, index) => (
             <div key={index} className="keen-slider__slide">
-              <div className="relative group w-[300px] h-[460px] overflow-hidden rounded-xl shadow-lg mx-auto">
+              <motion.div
+                className="relative w-[360px] h-[540px] overflow-hidden rounded-2xl shadow-xl mx-auto group"
+                onHoverStart={() => setHoverIndex(index)}
+                onHoverEnd={() => setHoverIndex(null)}
+              >
+                {/* Image */}
                 <img
                   src={member.image}
                   alt={member.name}
-                  className="w-full h-full object-cover transition-transform duration-1000 ease-[cubic-bezier(0.25, 1, 0.5, 1)] group-hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
 
-                {/* Hover Overlay Panel */}
-                <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-white/95 via-white/60 to-transparent backdrop-blur-lg p-4 transform translate-y-full group-hover:translate-y-1/2 transition-all duration-1000 ease-[cubic-bezier(0.25, 1, 0.5, 1)] z-20 flex flex-col justify-center items-center text-center">
-                  <h3 className="text-lg font-semibold text-gray-800">{member.name}</h3>
-                  <p className="text-blue-500 text-sm">{member.specification}</p>
-                  <p className="text-gray-700 text-sm mt-1">{member.text}</p>
-                </div>
-              </div>
+                {/* Animated Overlay Panel */}
+                <motion.div
+                  className="absolute bottom-0 left-0 w-full h-30% z-20"
+                  initial={{ y: "100%" }}
+                  animate={{ y: hoverIndex === index ? "0%" : "100%" }}
+                  transition={{
+                    duration: 0.6,
+                    ease: [0.25, 1, 0.5, 1],
+                  }}
+                >
+                  <div className="w-full h-full bg-gradient-to-t from-white/90 via-white/60 to-transparent backdrop-blur-md p-6 rounded-t-2xl flex flex-col items-start justify-start text-center">
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{
+                        opacity: hoverIndex === index ? 1 : 0,
+                        y: hoverIndex === index ? 0 : 20,
+                      }}
+                      transition={{ duration: 0.4, delay: 0.1 }}
+                      className="w-full"
+                    >
+                      <h3 className="text-xl font-semibold text-gray-800">{member.name}</h3>
+                      <p className="text-blue-500 text-base mt-1">{member.specification}</p>
+                      <p className="text-gray-700 text-sm mt-2">{member.text}</p>
+                    </motion.div>
+                  </div>
+                </motion.div>
+              </motion.div>
             </div>
           ))}
         </div>
 
         {/* Navigation Arrows */}
-        <div className="absolute mt-10 right-6 flex gap-3 z-10">
+        <div className="absolute mt-10 right-14 flex gap-3 z-10">
           <button
             onClick={() => instanceRef.current?.prev()}
             className="bg-white shadow-md p-2 rounded-full"

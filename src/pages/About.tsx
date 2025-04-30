@@ -1,6 +1,7 @@
 
 import { motion } from "framer-motion";
 import Progressbar from "../components/Progressbar";
+import { Link } from "react-router-dom";
 
 export default function About() {
   return (
@@ -43,9 +44,9 @@ export default function About() {
           Contact Us
         </button> */}
 
-        <button className="bg-gradient-custom p-4 text-white rounded-md font-semibold w-[180px]">
+        <Link to="/contact"><button className="bg-gradient-custom p-4 text-white rounded-md font-semibold w-[180px] hover:cursor-pointer hover:scale-105 transition-transform duration-300 ease-in-out">
             Contact Us
-        </button>
+        </button></Link>
         </div>
       </div>
 

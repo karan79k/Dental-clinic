@@ -1,68 +1,75 @@
-
 import { FaPhoneAlt } from "react-icons/fa";
 import { MdOutlineEmail } from "react-icons/md";
 import { FaMapMarkerAlt } from "react-icons/fa";
 
-
 export default function Contact() {
   return (
-    <div className="min-h-screen flex flex-col">
-    
+    <div className="min-h-screen pt-14 flex flex-col bg-gray-50">
+      <div className="container mx-auto py-16">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          {/* Contact Cards */}
+          <div className="flex flex-col space-y-6">
+            {/* Location Card */}
+            <div className="bg-gradient-custom p-6 rounded-2xl text-white transform hover:scale-105 transition-all duration-300 shadow-lg">
+              <div className="flex flex-col space-y-4">
+                <div className="flex items-center gap-3">
+                  <FaMapMarkerAlt className="w-6 h-6" />
+                  <h4 className="font-semibold">Locate Us</h4>
+                </div>
+                <p className="text-gray-100">Quality Clinics, Saudi Arabia.</p>
+              </div>
+            </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-10">
-        {/* Contact Info */}
-        <div className="flex flex-col space-y-6">
-          
-          <div className="flex items-start flex-col  bg-secondary text-white p-4 rounded-md h-30 w-auto sm:w-80 hover:bg-violet-600 transition-colors">
-            <h4>
-              Locate Us
-            </h4>
-            <div className="flex py-4 gap-4 items-center justify-center ">
-            <FaMapMarkerAlt className="size-8  "/>
-            <p>Quality Clinics, Saudi Arabia.</p>
+            {/* Phone Card */}
+            <div className="bg-gradient-custom p-6 rounded-2xl text-white transform hover:scale-105 transition-all duration-300 shadow-lg">
+              <div className="flex flex-col space-y-4">
+                <div className="flex items-center gap-3">
+                  <FaPhoneAlt className="w-6 h-6" />
+                  <h4 className="font-semibold">Phone</h4>
+                </div>
+                <a
+                  href="tel:920004864"
+                  className="text-gray-100 hover:text-white transition-colors"
+                >
+                  920004864
+                </a>
+              </div>
+            </div>
+
+            {/* Email Card */}
+            <div className="bg-gradient-custom p-6 rounded-2xl text-white transform hover:scale-105 transition-all duration-300 shadow-lg">
+              <div className="flex flex-col space-y-4">
+                <div className="flex items-center gap-3">
+                  <MdOutlineEmail className="w-6 h-6" />
+                  <h4 className="font-semibold">Email</h4>
+                </div>
+                <a
+                  href="mailto:care@aljawdahclinic.com"
+                  className="text-gray-100 hover:text-white transition-colors"
+                >
+                  care@aljawdahclinic.com
+                </a>
+              </div>
             </div>
           </div>
 
-          <div className="flex flex-col gap-4">
-            <div className="flex flex-col items-start  gap-4 bg-secondary text-white p-4 rounded-md h-30 w-auto sm:w-80 hover:bg-violet-600 transition-colors">
-            <h4>Phone</h4>
-              <a
-                href="tel:01417777511"
-                className="flex gap-4 items-center justify-center"
-              >
-                  <FaPhoneAlt className="size-8" />
-                  <p>920004864</p>
-              </a>
-            </div>
-
-            {/* Email */}
-            <div  className="flex items-start flex-col gap-4 bg-secondary text-white p-4 rounded-md h-30 w-auto sm:w-80 hover:bg-violet-600 transition-colors">
-            <h4>Email</h4>
-              <a
-                href="mailto:info@dentalglasgow.co.uk"
-                className="flex gap-4 items-center justify-center"
-              >
-                <MdOutlineEmail className="size-8" />
-                <p>care@aljawdahclinic.com</p>
-              </a>
+          {/* Google Maps */}
+          <div className="lg:col-span-2">
+            <div className="w-full h-full rounded-2xl overflow-hidden shadow-lg">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d8942.320592824271!2d-4.154342!3d55.92198!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1745042486244!5m2!1sen!2sus"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="w-full h-full"
+              ></iframe>
             </div>
           </div>
-        </div>
-
-        {/* Google Maps Embed */}
-        <div className="w-full h-96 rounded-md overflow-hidden">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d8942.320592824271!2d-4.154342!3d55.92198!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1745042486244!5m2!1sen!2sus"
-            width="100%"
-            height="100%"
-            style={{ border: 0 }}
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          ></iframe>
         </div>
       </div>
-
     </div>
   );
 }
