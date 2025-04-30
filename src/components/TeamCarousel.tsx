@@ -26,7 +26,7 @@ const team = [
     text: "Crowns and Implants",
   },
   {
-    image: "/Images/cd-5.png",
+    image: "/Images/cd-5.jpg",
     name: "Dr Philip Church",
     specificaiton: "Dentist",
     text: "Implants and Sedation",
@@ -50,7 +50,7 @@ const team = [
     text: "Crowns and Implants",
   },
   {
-    image: "/Images/cd-9.png",
+    image: "/Images/cd-9.jpg",
     name: "Dr Nina Patel",
     specificaiton: "Prosthodontist",
     text: "Crowns and Implants",
