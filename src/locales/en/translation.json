@@ -23,15 +23,15 @@
         "sections": {
             "features": {
                 "leaders": {
-                    "title": "Industry Leaders",
-                    "subtitle": "in Dental Care"
+                    "title": "Leaders",
+                    "subtitle": "in Cosmetic Dentistry"
                 },
                 "modern": {
-                    "title": "Modern Technology",
-                    "subtitle": "Advanced Solutions"
+                    "title": "State of the Art",
+                    "subtitle": "modern clinic"
                 },
                 "standards": {
-                    "title": "Setting Standards",
+                    "title": "Redefending standards",
                     "subtitle": "in Patient Care"
                 }
             }
@@ -159,5 +159,33 @@
             "title": "Our Message",
             "description": "We strive to satisfy our clients, meet all their needs under one roof, and provide them with the highest levels of healthcare. We ensure that healthcare meets the latest international standards and is delivered using the latest technology under the supervision of a team of consultants and specialists from international universities."
         }
+    },
+    "team": {
+        "meetDentist": "Meet Our Team",
+        "title": "Expert Dentists",
+        "subtitle": "Leading specialists in modern dentistry",
+        "viewAll": "View All Doctors",
+        "members": [
+            {
+                "name": "Dr. Philip Church",
+                "specification": "Implant Specialist",
+                "text": "Expert in dental implants and sedation dentistry with over 15 years of experience"
+            },
+            {
+                "name": "Dr. Jane Miller",
+                "specification": "Cosmetic Dentist",
+                "text": "Specializing in smile makeovers and advanced cosmetic procedures"
+            },
+            {
+                "name": "Dr. Alan Smith",
+                "specification": "Orthodontist",
+                "text": "Pioneer in invisible braces and complex orthodontic treatments"
+            },
+            {
+                "name": "Dr. Nina Patel",
+                "specification": "Pediatric Specialist",
+                "text": "Dedicated to providing gentle care for our youngest patients"
+            }
+        ]
     }
 }

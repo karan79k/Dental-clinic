@@ -6,7 +6,7 @@ import OurTreatmentsSlider from "../components/OurTreatmentsSlider"
 import OurPractice from "../components/OurPractice"
 import UpperParallax from "../components/UpperParallax"
 import Testimonials from "../components/Testimonials"
-//import OurTeam from "../components/OurTeam"
+import OurTeam from "../components/OurTeam"
 import HomeParallax from "../components/HomeParallax"
 
 export default function Home() {
@@ -18,6 +18,7 @@ export default function Home() {
       <UpperParallax/>
       <Testimonials/>
       <OurPractice/>
+      <OurTeam/>
     </div>
   )
 }

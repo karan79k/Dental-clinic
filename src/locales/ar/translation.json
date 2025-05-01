@@ -64,19 +64,19 @@
     "home": {
         "sections": {
             "features": {
-                "leaders": {
-                    "title": "رواد الصناعة",
-                    "subtitle": "في رعاية الأسنان"
-                },
-                "modern": {
-                    "title": "تقنية حديثة",
-                    "subtitle": "حلول متقدمة"
-                },
-                "standards": {
-                    "title": "نضع المعايير",
-                    "subtitle": "في رعاية المرضى"
-                }
+            "leaders": {
+              "title": "رواد",
+              "subtitle": "في طب الأسنان التجميلي"
+            },
+            "modern": {
+              "title": "عيادة حديثة",
+              "subtitle": "ومتطورة"
+            },
+            "standards": {
+              "title": "إعادة تعريف المعايير",
+              "subtitle": "في رعاية المرضى"
             }
+          }
         }
     },
     "treatments": {
