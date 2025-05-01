@@ -2,8 +2,7 @@ import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 
 export default function DownloadSection() {
-  const { t, i18n } = useTranslation();
-  const isArabic = i18n.language === 'ar';
+  const { t } = useTranslation();
 
   return (
     <div className="relative overflow-hidden min-h-screen flex flex-col md:flex-row items-center justify-evenly p-8 bg-white">

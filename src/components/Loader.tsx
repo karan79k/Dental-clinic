@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 
 export default function Loader() {
-  const { t, i18n } = useTranslation();
+  const {  i18n } = useTranslation();
   const isArabic = i18n.language === 'ar';
   const [loading] = useState(true);
   const [currentText, setCurrentText] = useState(0);
