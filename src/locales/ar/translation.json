@@ -1,0 +1,134 @@
+{
+    "welcome": "مرحبًا بكم في عيادتنا لطب الأسنان",
+    "navigation": {
+        "about": "حول",
+        "contact": "اتصل بنا", 
+        "ourDoctors": "أطباؤنا",
+        "bookAppointment": "احجز موعدًا"
+    },
+    "buttons": {
+        "toggleLanguage": "English",
+        "learnMore": "اعرف أكثر",
+        "previous": "السابق",
+        "next": "التالي"
+    },
+    "Book Appointment": "حجز موعد",
+    "Brighten Your Smile": "أضئ ابتسامتك",
+    "Brighten Your Day": "أضئ یومك",
+    "Our philosophy is built on providing the world's best cosmetic dental care...": "فلسفتنا تقوم على تقدیم أفضل رعایة تجمیلیة للأسنان في العالم، مصممة خصیصًا لكل فرد.",
+    "Learn More": "اعرف المزید",
+    "Leaders in Cosmetic dentistry": "روّاد في طب الأسنان التجمیلي",
+    "State of the art modern clinic": "عیادة حدیثة ومتطورة",
+    "Redefining standards in patient care": "نعید تعریف معاییر رعایة المرضى",
+    "Our Treatments": "علاجاتنا",
+    "Dermatology Department": "قسم الجلدیة",
+    "Face and eyebrow bleaching session": "جلسة تشقیر الوجھ والحواجب",
+    "Productivity": "الإنتاجیة",
+    "Laser session for one area of your choice (underarms-chin) + Touch Ups": "جلسة لیزر لمنطقة من اختیارك (تحت الإبط أو الذقن) + لمسات تجمیلیة",
+    "Product": "منتج",
+    "Dermapen session + mesotherapy for skin...": "جلسة دیرما بن + میزوثیرابي لنضارة وشد البشرة + میزوثیرابي لتكبیر الشفاه",
+    "Smile Makeovers that Change Lives": "تحولات الابتسامة التي تغیر الحیاة",
+    "We pride ourselves on delivering...": "نفخر بتقدیم أعلى مستویات تجمیل الأسنان لكل مریض",
+    "Patient Testimonials": "شھادات المرضى",
+    "We've built a reputation on going the extra mile...": "بنینا سمعتنا من خلال تجاوز التوقعات لراحة مرضانا",
+    "Our Practice": "عیادتنا",
+    "Our state-of-the-art practice is situated...": "عیادتنا المتطورة تقع في ضواحي غلاسكو، حیث یرحب بكم فریقنا الودود وجوھا الھادئ",
+    "Meet your dentist": "قابل طبیب أسنانك",
+    "Our Team": "فریقنا",
+    "Experts in dental care": "خبراء في رعایة الأسنان",
+    "Get Our App": "حمّل تطبیقنا",
+    "Download our dental clinic app for easy...": "حمّل تطبیق عیادتنا لحجز المواعید بسھولة وتلقي التذكیرات والمزید!",
+    "Download on Google Play": "Google Play التحمیل من",
+    "Download on App Store": "App Store التحمیل من",
+    "Stay in touch": "تواصل معنا",
+    "Join our Community": "انضم إلى مجتمعنا",
+    "Don’t worry — we won’t spam you...": "لا تقلق — لن نزعجك بالرسائل المزعجة.",
+    "Enter your email": "أدخل بریدك الإلكتروني",
+    "Subscribe": "اشترك",
+    "By clicking Sign Up you're confirming that you agree with our Terms and Conditions.": "بالنقر على \"تسجیل\"، فإنك تؤكد موافقتك على الشروط والأحكام الخاصة بنا.",
+    "Leaders in Cosmetic Dentistry": "رواد تجمیل الأسنان",
+    "Contact Us": "اتصل بنا",
+    "Your Trusted Dental Practice in Jeddah, Saudi Arabia": "عیادتك الموثوقة لطب الأسنان في جدة، المملكة العربیة السعودیة",
+    "Take a look at how far we've come": "ألقِ نظرة على مدى تقدمنا",
+    "Quality Clinics has evolved over the years...": "تطورت عیادات كوالیتي على مر السنین لتصبح من رواد تجمیل الأسنان",
+    "We pride ourselves on offering the highest standard of care to all patients": "نفخر بتقدیم أعلى معاییر الرعایة لجمیع المرضى",
+    "2008 - Company Founded": "٢٠٠٨ - تأسیس الشركة",
+    "Our journey began with a small team and a big vision to transform the industry": "بدأنا رحلتنا بفریق صغیر ورؤیة كبیرة لتحویل ھذا المجال",
+    "Meet your dentists": "قابل أطباء الأسنان",
+    "Book an appointment today": "احجز موعدك الیوم",
+    "Start your smile journey at Jawdah Clinics": "ابدأ رحلتك نحو الابتسامة في عیادات جوْدة",
+    "Locate Us": "موقعنا",
+    "Quality Clinics": "عیادات الجودة",
+    "Phone": "الھاتف",
+    "Email": "البرید الإلكتروني",
+    "home": {
+        "sections": {
+            "features": {
+                "leaders": {
+                    "title": "روّاد",
+                    "subtitle": "في طب الأسنان التجميلي"
+                },
+                "modern": {
+                    "title": "أحدث التقنيات",
+                    "subtitle": "في عيادة حديثة"
+                },
+                "standards": {
+                    "title": "نعيد تعريف المعايير",
+                    "subtitle": "في رعاية المرضى"
+                }
+            }
+        }
+    },
+    "treatments": {
+        "title": "علاجاتنا",
+        "dermatology": {
+            "title": "قسم الجلدية",
+            "bleaching": "جلسة تفتيح الوجه والحواجب",
+            "laser": {
+                "title": "الإنتاجية",
+                "description": "جلسة ليزر لمنطقة من اختيارك (تحت الإبط أو الذقن) + لمسات تجميلية"
+            },
+            "dermapen": {
+                "title": "العناية",
+                "description": "جلسة ديرمابن + ميزوثيرابي لنضارة وشد البشرة + ميزوثيرابي لتكبير الشفاه"
+            }
+        }
+    },
+   
+  "smileMakeover": {
+    "title": "تحولات الابتسامة التي تغير الحياة",
+    "description": "نفخر بتقديم مستويات استثنائية من طب الأسنان التجميلي لكل مريض يدخل عيادتنا",
+    "beforeAlt": "صورة قبل العلاج",
+    "afterAlt": "صورة بعد العلاج"
+  },
+  "testimonials": {
+    "title": "شهادات المرضى",
+    "subtitle": "بنينا سمعتنا من خلال تجاوز التوقعات لراحة مرضانا. بالنسبة لنا، الأمر يتعلق دائمًا بك ومعاملة كل مريض بشكل فردي."
+  },
+  "testimonials": {
+    "title": "شهادات المرضى",
+    "subtitle": "بنينا سمعتنا من خلال تجاوز التوقعات لراحة مرضانا. بالنسبة لنا، الأمر يتعلق دائمًا بك ومعاملة كل مريض بشكل فردي.",
+    "cards": [
+      {
+        "text": "هذه عيادة ممتازة! لا شيء صعب على أي من أعضاء فريق العمل هنا. <br/> أنصح بشدة بعيادة ميلرزنيوك للأسنان!",
+        "author": "جانيس ريد - مريض دينبلان"
+      },
+      {
+        "text": "أول زراعة أسنان، سعيد جداً بالنتيجة والعلاج كان بدون ألم. <br/> أوصي بشدة بالعيادة والطاقم الطبي المحترف. شكراً لاستعادة ابتسامتي!",
+        "author": "ساندرا جيمسون - مريض زراعة الأسنان"
+      },
+      {
+        "text": "لم أكن راضية أبداً عن أسناني وشعرت أن الحواف غير متساوية. أردت تحسيناً لكن لم أرد أي ضرر لأسناني. <br/> منذ إجراء التجميل المركب، زادت ثقتي بنفسي كثيراً.",
+        "author": "مهيري ماكلين - مريض تقويم شفاف وتجميل"
+      },
+      {
+        "text": "رعاية أسنان متميزة! الفريق بأكمله محترف ومهتم. المرافق الحديثة والاهتمام بالتفاصيل جعل تجربتي استثنائية. <br/> سعيد جداً بنتائج العلاج.",
+        "author": "داود طومسون - مريض طب الأسنان التجميلي"
+      },
+      {
+        "text": "كشخص كان دائماً قلقاً من زيارات طبيب الأسنان، هذه العيادة غيرت كل شيء بالنسبة لي. <br/> الطاقم صبور ومتفهم للغاية. نهجهم اللطيف جعلني أشعر بالراحة.",
+        "author": "إيما ويلسون - رعاية المرضى القلقين"
+      }
+    ]
+  }
+}

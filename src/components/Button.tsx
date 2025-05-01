@@ -1,17 +1,16 @@
+import { useTranslation } from "react-i18next";
+
 export default function Button() {
-  return (
-    <button
-    className="p-4 bg-gradient-custom cursor-pointer text-white rounded-md w-[200px] text-[16px] 
-              
-               transform hover:scale-105 transition-all duration-300"
-  >
-    Book Appointment
-  </button>
+  const { t } = useTranslation();
   
+  return (
+    <button 
+      className="p-4 bg-gradient-custom text-[14px] sm:text-[16px] text-white rounded-md hover:opacity-90 transition-all duration-300 cursor-pointer"
+    >
+      {t('navigation.bookAppointment')}
+    </button>
   );
 }
-
-// linear-gradient(141deg, rgba(255, 207, 242, 1) 0%, rgba(151, 125, 255, 1) 30%, rgba(0, 51, 255, 1) 100%)
 
 
 

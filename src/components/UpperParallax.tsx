@@ -2,6 +2,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import Button from "./Button";
+import { useTranslation } from "react-i18next";
 
 const beforeImages = [
   "https://images.unsplash.com/photo-1525222285365-d6bfe94ec598?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3",
@@ -25,21 +26,27 @@ export default function ParallaxWithScrollAndInView() {
     target: containerRef,
     offset: ["start start", "end end"],
   });
+  const { t, i18n } = useTranslation();
 
   const y = useTransform(scrollYProgress, [0.9, 1], ["-10%", "-20%"]);
+  const isArabic = i18n.language === 'ar';
 
   return (
-    <div ref={containerRef} className="relative w-full min-h-[500vh] py-10 ">
+    <div ref={containerRef} className="relative w-full min-h-[500vh] py-10">
       <div className="sticky top-0 h-screen py-20">
         <div className="container grid grid-cols-1 md:grid-cols-2 h-full w-full">
           
           {/* Text Section */}
-          <div className="flex flex-col sticky top-0 h-screen py-10 pr-[8rem]">
-            <h3 className="mb-6 text-[56px]">Smile Makeovers that Change Lives</h3>
-            <p className="text-gray-600 mb-8 text-[]">
-              We pride ourselves on delivering exceptionally high levels of cosmetic dentistry to each patient that walks through our doors.
+          <div className={`flex flex-col sticky top-0 h-screen py-10 pr-[8rem] ${isArabic ? 'text-right' : 'text-left'}`}>
+            <h3 className={`mb-6 text-[56px] ${isArabic ? 'text-right' : 'text-left'}`}>
+              {t('smileMakeover.title')}
+            </h3>
+            <p className={`text-gray-600 mb-8 ${isArabic ? 'text-right' : 'text-left'}`}>
+              {t('smileMakeover.description')}
             </p>
-            <Button />
+            <div className={isArabic ? 'text-right' : 'text-left'}>
+              <Button />
+            </div>
           </div>
 
           {/* Parallax Images */}

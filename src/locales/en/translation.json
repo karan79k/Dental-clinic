@@ -1,0 +1,130 @@
+{
+    "welcome": "Welcome to our Dental Clinic",
+    "navigation": {
+        "about": "About",
+        "contact": "Contact",
+        "ourDoctors": "Our Doctors",
+        "bookAppointment": "Book Appointment"
+    },
+    "buttons": {
+        "toggleLanguage": "عربي",
+        "learnMore": "Learn More",
+        "bookAppointment": "Book Appointment",
+        "subscribe": "Subscribe",
+        "previous": "Previous",
+        "next": "Next"
+    },
+    "home": {
+        "hero": {
+            "title": "Brighten Your Smile",
+            "subtitle": "Brighten Your Day",
+            "philosophy": "Our philosophy is built on providing the world's best cosmetic dental care..."
+        },
+        "sections": {
+            "features": {
+                "leaders": {
+                    "title": "Leaders",
+                    "subtitle": "in Cosmetic Dentistry"
+                },
+                "modern": {
+                    "title": "State of the Art",
+                    "subtitle": "Modern Clinic"
+                },
+                "standards": {
+                    "title": "Redefining Standards",
+                    "subtitle": "in Patient Care"
+                }
+            }
+        }
+    },
+    "treatments": {
+        "title": "Our Treatments",
+        "dermatology": {
+            "title": "Dermatology Department",
+            "bleaching": "Face and eyebrow bleaching session",
+            "laser": {
+                "title": "Productivity",
+                "description": "Laser session for one area of your choice (underarms-chin) + Touch Ups"
+            },
+            "dermapen": {
+                "title": "Product",
+                "description": "Dermapen session + mesotherapy for skin freshness and tightening + mesotherapy for lip augmentation"
+            }
+        }
+    },
+    "about": {
+        "title": "Leaders in Cosmetic Dentistry",
+        "trust": "Your Trusted Dental Practice in Jeddah, Saudi Arabia",
+        "history": {
+            "title": "Take a look at how far we've come",
+            "description": "Quality Clinics has evolved over the years...",
+            "founded": "2008 - Company Founded",
+            "journey": "Our journey began with a small team and a big vision to transform the industry"
+        }
+    },
+    "testimonials": {
+        "title": "Patient Testimonials",
+        "subtitle": "We've built a reputation on going the extra mile for our patients. For us, it's always about you and treating every patient individually."
+    },
+    "practice": {
+        "title": "Our Practice",
+        "description": "Our state-of-the-art practice is situated...",
+        "team": {
+            "title": "Our Team",
+            "subtitle": "Experts in dental care",
+            "meetDentist": "Meet your dentist"
+        }
+    },
+    "app": {
+        "title": "Get Our App",
+        "description": "Download our dental clinic app for easy...",
+        "googlePlay": "Download on Google Play",
+        "appStore": "Download on App Store"
+    },
+    "community": {
+        "title": "Stay in touch",
+        "join": "Join our Community",
+        "spam": "Don't worry — we won't spam you...",
+        "email": "Enter your email",
+        "terms": "By clicking Sign Up you're confirming that you agree with our Terms and Conditions."
+    },
+    "contact": {
+        "title": "Contact Us",
+        "locate": "Locate Us",
+        "clinic": "Quality Clinics",
+        "phone": "Phone",
+        "email": "Email"
+    },
+    "smileMakeover": {
+        "title": "Smile Makeovers that Change Lives",
+        "description": "We pride ourselves on delivering exceptionally high levels of cosmetic dentistry to each patient that walks through our doors.",
+        "beforeAlt": "Before treatment image",
+        "afterAlt": "After treatment image"
+    },
+    "testimonials": {
+    "title": "Patient Testimonials",
+    "subtitle": "We've built a reputation on going the extra mile for our patients. For us, it's always about you and treating every patient individually.",
+    "cards": [
+      {
+        "text": "This is an excellent practice! Nothing is too much trouble to any one of the members of staff here. <br/> I can highly recommend Millersneuk Dental Practice!",
+        "author": "Janice Reid - Denplan Patient"
+      },
+      {
+        "text": "First implant, absolutely delighted with the result and the treatment was painless.<br/> Would highly recommend the practice, Mr Church, Yvonne and the staff, who are all highly professional. Thank you for getting my smile back!",
+        "author": "Sandra Jamieson - Implant Patient"
+      },
+      {
+        "text": "I was never happy with my teeth and felt like the edges were not even. I wanted an improvement but did not want any damage to my own teeth.<br/> Since I have had composite bonding done, my confidence has increased so much.",
+        "author": "Mhairi Mclean - Invisalign & Bonding Patient"
+      },
+      {
+        "text": "Outstanding dental care! The entire team is professional and caring. The modern facilities and attention to detail made my dental experience exceptional.<br/> Very pleased with the results of my treatment.",
+        "author": "David Thompson - Cosmetic Dentistry Patient"
+      },
+      {
+        "text": "As someone who was always anxious about dental visits, this practice changed everything for me.<br/> The staff is incredibly patient and understanding. Their gentle approach made me feel at ease.",
+        "author": "Emma Wilson - Nervous Patient Care"
+      }
+    ]
+  }
+}

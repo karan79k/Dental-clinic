@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useRef } from "react"
-import { motion, useScroll, useTransform  } from "framer-motion"
+import { motion, useScroll, useTransform } from "framer-motion"
+import { useTranslation } from "react-i18next"
 import OurTreatmentsSlider from "../components/OurTreatmentsSlider"
 import OurPractice from "../components/OurPractice"
 import UpperParallax from "../components/UpperParallax"
@@ -9,12 +10,8 @@ import OurTeam from "../components/OurTeam"
 import HomeParallax from "../components/HomeParallax"
 
 export default function Home() {
-  
-
-  
   return (
-    <div className="relative w-full ">
-      {/* Header */}
+    <div className="relative w-full">
       <HomeParallax/>
       <TextAnimation/>
       <OurTreatmentsSlider/>
@@ -26,13 +23,10 @@ export default function Home() {
   )
 }
 
-
-
-
 const texts = [
-  "Leaders in cosmetic dentistry",
-  "State of the art modern clinic",
-  "Redefining standards in patient care"
+  'home.sections.features.leaders',
+  'home.sections.features.modern',
+  'home.sections.features.standards'
 ];
 
 function TextAnimation() {
@@ -41,22 +35,18 @@ function TextAnimation() {
     target: containerRef,
     offset: ["start end", "end start"],
   });
-  // const isInView = useInView(containerRef, { amount: 0.3, once: true });
 
   return (
     <motion.div 
       ref={containerRef} 
       className="min-h-[400vh] relative"
-      // initial={{ opacity: 0, y: 30 }}
-      // animate={isInView ? { opacity: 1, y: 0 } : {}}
-      // transition={{ duration: 0.8, ease: "easeOut" }}
     >
       <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
         <div className="relative w-full h-full">
-          {texts.map((text, index) => (
+          {texts.map((textKey, index) => (
             <TextBlock 
               key={index}
-              text={text}
+              textKey={textKey}
               index={index}
               total={texts.length}
               scrollYProgress={scrollYProgress}
@@ -68,19 +58,16 @@ function TextAnimation() {
   );
 }
 
-function TextBlock({
-  text,
-  index,
-  total,
-  scrollYProgress
-}: {
-  text: string;
+interface TextBlockProps {
+  textKey: string;
   index: number;
   total: number;
   scrollYProgress: any;
-}) {
+}
+
+function TextBlock({ textKey, index, total, scrollYProgress }: TextBlockProps) {
   const ref = useRef(null);
-  // const isInView = useInView(ref, { amount: 0.3, once: true });
+  const { t } = useTranslation();
 
   const sectionStart = index / total;
   const sectionMid = sectionStart + 1 / total / 2;
@@ -95,38 +82,37 @@ function TextBlock({
     [0, 1, 0]
   );
 
-
-
-  // const y = useTransform(scrollYProgress, [sectionStart, sectionEnd], ["40%", "0%"]);
-
-return (
-  <motion.div
-    ref={ref}
-    className="absolute inset-0 flex items-start pt-[30vh] justify-center text-center"
-    style={{
-      opacity,
-      zIndex: total - index,
-    }}
-  >
-    <div className="w-1/2 flex-wrap text-start">
-      <h2>
-        {index === 0 ? (
-          <>
-            <span className="text-primary">Leaders</span> in cosmetic dentistry
-          </>
-        ) : index === 1 ? (
-          <>
-            State of the art <span className="text-primary">modern clinic </span>
-          </>
-        ) : index === 2 ? (
-          <>
-            <span className="text-primary">Redefining standards</span> in patient care
-          </>
-        ) : (
-          text
-        )}
-      </h2>
-    </div>
-  </motion.div>
-);
+  return (
+    <motion.div
+      ref={ref}
+      className="absolute inset-0 flex items-start pt-[30vh] justify-center text-center"
+      style={{
+        opacity,
+        zIndex: total - index,
+      }}
+    >
+      <div className={`w-1/2 flex-wrap text-start`}>
+        <h2 className="text-4xl font-bold">
+          {index === 0 ? (
+            <>
+              <span className="text-[#1ab8b3]">{t('home.sections.features.leaders.title')}</span>{' '}
+              {t('home.sections.features.leaders.subtitle')}
+            </>
+          ) : index === 1 ? (
+            <>
+              {t('home.sections.features.modern.title')}{' '}
+              <span className="text-[#1ab8b3]">{t('home.sections.features.modern.subtitle')}</span>
+            </>
+          ) : index === 2 ? (
+            <>
+              <span className="text-[#1ab8b3]">{t('home.sections.features.standards.title')}</span>{' '}
+              {t('home.sections.features.standards.subtitle')}
+            </>
+          ) : (
+            t(textKey)
+          )}
+        </h2>
+      </div>
+    </motion.div>
+  );
 }

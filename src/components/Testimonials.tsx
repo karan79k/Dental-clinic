@@ -3,29 +3,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { LiaStarSolid } from "react-icons/lia";
 import Button from "./Button";
-
-const testimonials = [
-  {
-    text: "This is an excellent practice! Nothing is too much trouble to any one of the members of staff here. <br/> I can highly recommend Millersneuk Dental Practice!",
-    author: "Janice Reid - Denplan Patient",
-  },
-  {
-    text: "First implant, absolutely delighted with the result and the treatment was painless.<br/> Would highly recommend the practice, Mr Church, Yvonne and the staff, who are all highly professional. Thank you for getting my smile back!",
-    author: "Sandra Jamieson - Implant Patient",
-  },
-  {
-    text: "I was never happy with my teeth and felt like the edges were not even. I wanted an improvement but did not want any damage to my own teeth.<br/> Since I have had composite bonding done, my confidence has increased so much. I get so many compliments on my teeth now.",
-    author: "Mhairi Mclean - Invisalign & Bonding Patient",
-  },
-  {
-    text: "Outstanding dental care! The entire team is professional and caring. The modern facilities and attention to detail made my dental experience exceptional.<br/> Very pleased with the results of my treatment and the friendly atmosphere.",
-    author: "David Thompson - Cosmetic Dentistry Patient",
-  },
-  {
-    text: "As someone who was always anxious about dental visits, this practice changed everything for me.<br/> The staff is incredibly patient and understanding. Their gentle approach and clear communication made me feel completely at ease.",
-    author: "Emma Wilson - Nervous Patient Care",
-  }
-];
+import { useTranslation } from "react-i18next";
 
 export default function Testimonials() {
   const containerRef = useRef(null);
@@ -33,36 +11,38 @@ export default function Testimonials() {
     target: containerRef,
     offset: ["start start", "end end"], 
   });
+  const { t, i18n } = useTranslation();
+  const isArabic = i18n.language === 'ar';
 
   return (
-    <div
-      ref={containerRef}
-      className="relative w-full min-h-[200vh] bg-black/80 pb-20"
-    >
+    <div ref={containerRef} className="relative w-full min-h-[200vh] bg-black/80 pb-20">
       <div className="container sticky top-0 h-screen overflow-hidden">
-        <div className=" grid grid-cols-1 md:grid-cols-2 h-full ">
-          <div className="flex flex-col justify-center sticky top-0 h-screen border-violet-600 ">
-            <h3 className="mb-6 text-white">Patient Testimonials</h3>
-            <p className=" text-white text-shadow-md mb-8 pr-24">
-              We've built a reputation on going the extra mile for our patients.
-              For us, it's always about you and treating every patient
-              individually.
+        <div className="grid grid-cols-1 md:grid-cols-2 h-full gap-x-8">
+          <div className={`flex flex-col justify-center sticky top-0 h-screen ${
+            isArabic ? 'text-right pl-24' : 'text-left pr-24'
+          }`}>
+            <h3 className="mb-6 text-white text-[42px] font-bold">
+              {t('testimonials.title')}
+            </h3>
+            <p className="text-white/80 text-shadow-md mb-8">
+              {t('testimonials.subtitle')}
             </p>
-            {/* <button className="bg-violet-500 text-white px-6 py-3 rounded-md hover:bg-violet-600 transition w-fit">
-              Book Appointment
-            </button> */}
-            <Button />
+            <div className={isArabic ? 'text-right' : 'text-left'}>
+              <Button />
+            </div>
           </div>
 
-          {/* Right content - parallax testimonials */}
-          <div className="relative h-screen">
+          <div className={`relative h-screen ${isArabic ? 'mr-8' : 'ml-8'}`}>
             <div className="sticky top-0 h-screen w-full overflow-hidden">
-              {testimonials.map((testimonial, index) => (
+              {[ 0,1, 2, 3, 4].map((index) => (
                 <TestimonialCard
                   key={index}
-                  testimonial={testimonial}
+                  testimonial={{
+                    text: t(`testimonials.cards.${index}.text`),
+                    author: t(`testimonials.cards.${index}.author`)
+                  }}
                   index={index}
-                  total={testimonials.length}
+                  total={5}
                   scrollYProgress={scrollYProgress}
                   isFirst={index === 0}
                 />
@@ -88,50 +68,49 @@ function TestimonialCard({
   scrollYProgress: any;
   isFirst: boolean;
 }) {
+  const { i18n } = useTranslation();
+  const isArabic = i18n.language === 'ar';
+  
   const sectionStart = index / total;
   const sectionEnd = (index + 1) / total;
 
+  // Adjust scroll progression for equal spacing
   const y = useTransform(
     scrollYProgress,
     [sectionStart, sectionEnd],
-    ["80%", "4%"]
+    ["120%", "0%"] // Increased range for better spacing
   );
 
-  // const opacity = useTransform(
-  //   scrollYProgress,
-  //   [sectionStart - 0.1, sectionStart, sectionEnd, sectionEnd + 0.1],
-  //   [0, 1, 1, 0]
-  // );
+  const cardSpacing = 60; // Increased spacing between cards
 
   return (
     <motion.div
-      className="absolute inset-0 flex items-center justify-center "
+      className="absolute inset-0 flex items-center justify-center"
       style={{
-        top: index * 40,
+        top: `${index * cardSpacing}px`, // Fixed pixel spacing
         y: isFirst ? "0%" : y,
-        zIndex: index,
+        zIndex:index, // Reverse z-index for proper stacking
       }}
     >
-      <div className="w-full mx-auto bg-[#0f172a] border-primary rounded-2xl shadow-xl p-8 text-white">
-        {/* Layered card effect */}
-        {/* <div className="absolute top-2 left-2 w-full h-full border-2 border-violet-500 rounded-2xl opacity-60 z-[-1]"></div> */}
-        {/* <div className="absolute top-4 left-4 w-full h-full border-2 border-violet-500 rounded-2xl opacity-30 z-[-2]"></div> */}
-
-        {/* Stars */}
-        <div className="flex mb-6 text-secondary">
+      <div 
+        className={`w-full max-w-[90%] mx-auto bg-[#0f172a] border-primary rounded-2xl shadow-xl p-8 text-white 
+        ${isArabic ? 'text-right' : 'text-left'}`}
+      >
+        <div className={`flex mb-6 text-secondary ${isArabic ? 'justify-end' : 'justify-start'}`}>
           {[...Array(5)].map((_, i) => (
             <LiaStarSolid key={i} className="text-secondary size-8" />
           ))}
         </div>
 
-        {/* Testimonial Text */}
         <p
-          className="text-white mb-4"
+          className="text-white mb-4 leading-relaxed"
           dangerouslySetInnerHTML={{ __html: testimonial.text }}
+          style={{ direction: isArabic ? 'rtl' : 'ltr' }}
         />
 
-        {/* Author */}
-        <p className=" text-primary">— {testimonial.author}</p>
+        <p className={`text-primary ${isArabic ? '' : '— '}`}>
+          {testimonial.author}
+        </p>
       </div>
     </motion.div>
   );
