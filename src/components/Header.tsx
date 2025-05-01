@@ -7,7 +7,7 @@ import { useTranslation } from 'react-i18next';
 import LanguageToggleButton from "./LanguageToggleButton";
 
 export default function Header() {
-  const { i18n, t } = useTranslation();
+  const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const { scrollY } = useScroll();
   const [showHeader, setShowHeader] = useState(true);

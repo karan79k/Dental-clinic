@@ -4,7 +4,7 @@ import { useRef } from "react";
 import { LiaStarSolid } from "react-icons/lia";
 import Button from "./Button";
 import { useTranslation } from "react-i18next";
-
+//bugs solved
 export default function Testimonials() {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
