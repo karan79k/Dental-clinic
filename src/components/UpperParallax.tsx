@@ -5,7 +5,7 @@ import Button from "./Button";
 import { useTranslation } from "react-i18next";
 
 const beforeImages = [
-  "/Images/upperParallax-01.jpeg",
+  "/Images/upperParallax-10.jpeg",
   "https://images.unsplash.com/photo-1628619487925-e9b8fc4c6b08?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3",
   "https://plus.unsplash.com/premium_photo-1708110769999-02be12f5930d?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3",
   "https://plus.unsplash.com/premium_photo-1703382945684-60321c25f248?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3",
@@ -13,7 +13,7 @@ const beforeImages = [
 ];
 
 const afterImages = [
-  "/Images/upperParallax-10.jpeg",
+  "/Images/upperParallax-01.jpeg",
   "https://images.unsplash.com/photo-1628619487925-e9b8fc4c6b08?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3",
   "https://plus.unsplash.com/premium_photo-1708110769999-02be12f5930d?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3",
   "https://plus.unsplash.com/premium_photo-1703382945684-60321c25f248?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3",
