@@ -49,7 +49,7 @@ export default function TeamCarousel() {
     loop: true,
     slides: {
       perView: 3,
-      spacing: 20,
+      spacing: -60,
     },
     rtl: isArabic,
     created(slider) {
@@ -122,7 +122,7 @@ export default function TeamCarousel() {
                 >
                   <div className={`w-full h-full ${
                     isArabic 
-                      ? 'bg-gradient-to-t from-black/90 via-black/70 to-transparent' 
+                      ? 'bg-gradient-to-t from-black/90 via-black/60 to-transparent' 
                       : 'bg-gradient-to-t from-white/90 via-white/60 to-transparent'
                   } backdrop-blur-md p-6 rounded-t-2xl`}>
                     <motion.div
