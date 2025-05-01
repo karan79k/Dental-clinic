@@ -4,18 +4,24 @@ import { initReactI18next } from 'react-i18next';
 import translationEN from './locales/en/translation.json';
 import translationAR from './locales/ar/translation.json';
 
-const resources = {
-  en: { translation: translationEN },
-  ar: { translation: translationAR }
-};
+// resources variable removed as it's not used
 
 i18n
   .use(initReactI18next)
   .init({
-    resources,
-    lng: localStorage.getItem('lang') || 'en',
-    fallbackLng: 'en',
-    interpolation: { escapeValue: false }
+    resources: {
+      en: {
+        translation: translationEN
+      },
+      ar: {
+        translation: translationAR
+      }
+    },
+    lng: 'ar', // Set default language to Arabic
+    fallbackLng: 'ar',
+    interpolation: {
+      escapeValue: false
+    },
+   
+    // Removed unsupported 'dir' property
   });
-
-export default i18n;

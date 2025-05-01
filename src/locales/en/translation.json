@@ -15,10 +15,13 @@
         "next": "Next"
     },
     "home": {
-        "hero": {
-            "title": "Brighten Your Smile",
-            "subtitle": "Brighten Your Day",
-            "philosophy": "Our philosophy is built on providing the world's best cosmetic dental care..."
+        "title": {
+            "line1": "Brighten Your Smile",
+            "line2": "Brighten Your Day"
+        },
+        "description": "Our philosophy is built on providing the world's best cosmetic dental care...",
+        "buttons": {
+            "learnMore": "Learn More"
         },
         "sections": {
             "features": {
@@ -88,16 +91,19 @@
     
     "app": {
         "title": "Get Our App",
-        "description": "Download our dental clinic app for easy...",
+        "description": "Download our dental clinic app for easy appointment booking, reminders, and more!",
         "googlePlay": "Download on Google Play",
-        "appStore": "Download on App Store"
-    },
-    "community": {
-        "title": "Stay in touch",
-        "join": "Join our Community",
-        "spam": "Don't worry — we won't spam you...",
-        "email": "Enter your email",
-        "terms": "By clicking Sign Up you're confirming that you agree with our Terms and Conditions."
+        "appStore": "Download on App Store",
+        "image": {
+            "alt": "Dental clinic mobile app preview"
+        },
+        "community": {
+            "title": "Stay in touch",
+            "join": "Join our Community",
+            "spam": "Don't worry — we won't spam you with countless emails or texts. Stay in touch and receive VIP offers and first-access to our events!",
+            "email": "Enter your email",
+            "terms": "By clicking Sign Up you're confirming that you agree with our Terms and Conditions."
+        }
     },
     "contact": {
         "title": "Contact Us",
@@ -159,7 +165,10 @@
             "title": "Our Message",
             "description": "We strive to satisfy our clients, meet all their needs under one roof, and provide them with the highest levels of healthcare. We ensure that healthcare meets the latest international standards and is delivered using the latest technology under the supervision of a team of consultants and specialists from international universities."
         }
-    },
+    }, "loader": {
+        "dental": "Dental",
+        "texts": ["Artists", "Experts", "Leaders", "Visionaries"]
+      },
     "team": {
         "meetDentist": "Meet Our Team",
         "title": "Expert Dentists",
@@ -167,25 +176,117 @@
         "viewAll": "View All Doctors",
         "members": [
             {
-                "name": "Dr. Philip Church",
-                "specification": "Implant Specialist",
-                "text": "Expert in dental implants and sedation dentistry with over 15 years of experience"
+                "name": "Dr Philip Church",
+                "specification": "Dentist",
+                "text": "Implants and Sedation Expert"
             },
             {
-                "name": "Dr. Jane Miller",
-                "specification": "Cosmetic Dentist",
-                "text": "Specializing in smile makeovers and advanced cosmetic procedures"
+                "name": "Dr Jane Doe",
+                "specification": "Oral Surgeon",
+                "text": "Facial Reconstruction Expert"
             },
             {
-                "name": "Dr. Alan Smith",
+                "name": "Dr Alan Smith",
                 "specification": "Orthodontist",
-                "text": "Pioneer in invisible braces and complex orthodontic treatments"
+                "text": "Braces and Aligners Specialist"
             },
             {
-                "name": "Dr. Nina Patel",
-                "specification": "Pediatric Specialist",
-                "text": "Dedicated to providing gentle care for our youngest patients"
+                "name": "Dr Nina Patel",
+                "specification": "Prosthodontist",
+                "text": "Crowns and Implants Expert"
+            },
+            {
+                "name": "Dr Sarah Wilson",
+                "specification": "Periodontist",
+                "text": "Gum Disease and Implant Specialist"
+            },
+            {
+                "name": "Dr James Miller",
+                "specification": "Endodontist",
+                "text": "Root Canal Treatment Expert"
+            },
+            {
+                "name": "Dr Emily Brown",
+                "specification": "Pediatric Dentist",
+                "text": "Children's Dental Care Specialist"
+            },
+            {
+                "name": "Dr Michael Chen",
+                "specification": "Cosmetic Dentist",
+                "text": "Smile Makeover Expert"
+            },
+            {
+                "name": "Dr Lisa Anderson",
+                "specification": "TMJ Specialist",
+                "text": "Jaw Pain and TMD Expert"
+            },
+            {
+                "name": "Dr Robert Taylor",
+                "specification": "Oral Pathologist",
+                "text": "Oral Disease Specialist"
+            },
+            {
+                "name": "Dr Maria Garcia",
+                "specification": "General Dentist",
+                "text": "Family Dental Care Expert"
+            },
+            {
+                "name": "Dr David Kim",
+                "specification": "Dental Surgeon",
+                "text": "Oral Surgery Specialist"
             }
         ]
+    },
+    "book": {
+        "title": "Book an Appointment Today",
+        "description": "Start your smile journey at Quality Clinics Dental Practice, Saudi Arabia"
+    },
+    "footer": {
+        "logo": {
+            "alt": "Quality Clinics Logo"
+        },
+        "contact": {
+            "address": "Quality Clinics, Saudi Arabia",
+            "phone": "0141 777 7511",
+            "email": "info@qualityclinics.sa"
+        },
+        "navigation": {
+            "title": "Navigation",
+            "home": "Home",
+            "about": "About",
+            "pricing": "Pricing",
+            "contact": "Contact",
+            "referrals": "Referrals",
+            "treatments": "All Treatments"
+        },
+        "useful": {
+            "title": "Useful Links",
+            "blog": "Blog",
+            "news": "News & Updates",
+            "complaints": "Complaints Procedure"
+        },
+        "treatments": {
+            "title": "Treatments",
+            "bonding": "Composite Bonding",
+            "invisalign": "Invisalign®",
+            "implants": "Implants",
+            "whitening": "Tooth Whitening",
+            "aesthetics": "Facial Aesthetics"
+        },
+        "subscribe": {
+            "title": "Subscribe",
+            "description": "Join our newsletter to stay up to date on features and releases.",
+            "placeholder": "Enter your email",
+            "terms": "By subscribing, you agree to our Privacy Policy and consent to receive updates from our company."
+        },
+        "copyright": {
+            "development": "Website By Gravit Infosystems pvt. ltd",
+            "rights": "© 2023 Quality Clinics. All rights reserved.",
+            "privacy": "Privacy Policy",
+            "terms": "Terms of Service",
+            "cookies": "Cookies Settings"
+        }
     }
 }
+
+

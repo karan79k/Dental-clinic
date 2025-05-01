@@ -6,6 +6,7 @@ import {
   FaFacebookF,
   FaSnapchatGhost,
 } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 const footer = [
   {
@@ -30,30 +31,32 @@ const footer = [
   },
 ];
 
-// const words = ['Experts' ,'Artists','Leaders']
-
 export default function Footer() {
+  const { t, i18n } = useTranslation();
+  const isArabic = i18n.language === 'ar';
+
   return (
     <footer className="bg-black px-6 py-10 text-sm border-t-[1px] border-t-[#1ab8b3b9]"> 
       <div className="container mx-auto space-y-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 text-gray-400">
           {/* Column 1 - Contact Info */}
           <div>
-            {/* <h4 className="text-white font-semibold mb-4">Logo</h4> */}
-            <Link to="/" >
+            <Link to="/">
               <img
-                src={"/Images/logo-3.png"}
-                alt="Logo"
+                src="/Images/logo-3.png"
+                alt={t('footer.logo.alt')}
                 className="h-8 sm:h-10 md:h-12 w-auto object-contain"
               />
             </Link>
             <ul className="space-y-4 mt-4">
               <li className="hover:text-primary text-white">
-                Quality Clinics, Saudi Arabia.
+                {t('footer.contact.address')}
               </li>
-              <li className="hover:text-primary text-white">0141 777 7511</li>
               <li className="hover:text-primary text-white">
-                info@dentalglasgow.co.uk
+                {t('footer.contact.phone')}
+              </li>
+              <li className="hover:text-primary text-white">
+                {t('footer.contact.email')}
               </li>
             </ul>
           </div>
@@ -61,37 +64,37 @@ export default function Footer() {
           {/* Column 2 - Navigation */}
           <div>
             <h4 className="text-primary mb-4" style={{ fontSize: "16px", fontWeight: 400 }}>
-              Navigation
+              {t('footer.navigation.title')}
             </h4>
             <ul className="space-y-2 text-white">
               <li>
                 <Link to="/" className="hover:text-primary">
-                  Home
+                  {t('footer.navigation.home')}
                 </Link>
               </li>
               <li>
-                <Link to="/" className="hover:text-primary">
-                  About
+                <Link to="/about" className="hover:text-primary">
+                  {t('footer.navigation.about')}
                 </Link>
               </li>
               <li>
-                <Link to="/" className="hover:text-primary">
-                  Pricing
+                <Link to="/pricing" className="hover:text-primary">
+                  {t('footer.navigation.pricing')}
                 </Link>
               </li>
               <li>
-                <Link to="/" className="hover:text-primary">
-                  Contact
+                <Link to="/contact" className="hover:text-primary">
+                  {t('footer.navigation.contact')}
                 </Link>
               </li>
               <li>
-                <Link to="/" className="hover:text-primary">
-                  Referrals
+                <Link to="/referrals" className="hover:text-primary">
+                  {t('footer.navigation.referrals')}
                 </Link>
               </li>
               <li>
-                <Link to="/" className="hover:text-primary">
-                  All Treatments
+                <Link to="/treatments" className="hover:text-primary">
+                  {t('footer.navigation.treatments')}
                 </Link>
               </li>
             </ul>
@@ -100,22 +103,22 @@ export default function Footer() {
           {/* Column 3 - Useful Links */}
           <div className="-ml-18">
             <h4 className="text-primary mb-4" style={{ fontSize: "16px", fontWeight: 400 }}>
-              Useful Links
+              {t('footer.useful.title')}
             </h4>
             <ul className="space-y-2 text-white">
               <li>
-                <Link to="/" className="hover:text-primary">
-                  Blog
+                <Link to="/blog" className="hover:text-primary">
+                  {t('footer.useful.blog')}
                 </Link>
               </li>
               <li>
-                <Link to="/" className="hover:text-primary">
-                  News & Updates
+                <Link to="/news" className="hover:text-primary">
+                  {t('footer.useful.news')}
                 </Link>
               </li>
               <li>
-                <Link to="/" className="hover:text-primary">
-                  Complaints Procedure
+                <Link to="/complaints" className="hover:text-primary">
+                  {t('footer.useful.complaints')}
                 </Link>
               </li>
             </ul>
@@ -124,32 +127,32 @@ export default function Footer() {
           {/* Column 4 - Treatments */}
           <div className="-ml-22">
             <h4 className="text-primary mb-4" style={{ fontSize: "16px", fontWeight: 400 }}>
-              Treatments
+              {t('footer.treatments.title')}
             </h4>
             <ul className="space-y-2 text-white">
               <li>
-                <Link to="/" className="hover:text-primary">
-                  Composite Bonding
+                <Link to="/bonding" className="hover:text-primary">
+                  {t('footer.treatments.bonding')}
                 </Link>
               </li>
               <li>
-                <Link to="/" className="hover:text-primary">
-                  Invisalign®
+                <Link to="/invisalign" className="hover:text-primary">
+                  {t('footer.treatments.invisalign')}
                 </Link>
               </li>
               <li>
-                <Link to="/" className="hover:text-primary">
-                  Implants
+                <Link to="/implants" className="hover:text-primary">
+                  {t('footer.treatments.implants')}
                 </Link>
               </li>
               <li>
-                <Link to="/" className="hover:text-primary">
-                  Tooth Whitening
+                <Link to="/whitening" className="hover:text-primary">
+                  {t('footer.treatments.whitening')}
                 </Link>
               </li>
               <li>
-                <Link to="/" className="hover:text-primary">
-                  Facial Aesthetics
+                <Link to="/aesthetics" className="hover:text-primary">
+                  {t('footer.treatments.aesthetics')}
                 </Link>
               </li>
             </ul>
@@ -158,43 +161,40 @@ export default function Footer() {
           {/* Column 5 - Subscribe */}
           <div className="-ml-28">
             <h4 className="text-primary mb-4" style={{ fontSize: "16px", fontWeight: 400 }}>
-              Subscribe
+              {t('footer.subscribe.title')}
             </h4>
-            <p className="text-gray-300 mb-4 ">
-              Join our newsletter to stay up to date on features and releases.
+            <p className="text-gray-300 mb-4">
+              {t('footer.subscribe.description')}
             </p>
             <div className="flex items-center gap-2 mb-4">
               <input
                 type="email"
-                placeholder="Enter your email"
-                className="w-full p-2  rounded-md bg-black/10 outline focus:ring-2 focus:ring-violet-500"
+                placeholder={t('footer.subscribe.placeholder')}
+                className="w-full p-2 rounded-md bg-black/10 outline focus:ring-2 focus:ring-violet-500"
               />
-                <button
-                  className="cursor-pointer border-[1px] border-[#1AB8B3] text-[#1AB8B3] px-4 py-2  rounded-md transition outline-none focus:outline-[#1AB8B3] hover:bg-[#1AB8B3] hover:text-white"
-                >
-                  Subscribe
-                </button>
+              <button className="cursor-pointer border-[1px] border-[#1AB8B3] text-[#1AB8B3] px-4 py-2 rounded-md transition outline-none focus:outline-[#1AB8B3] hover:bg-[#1AB8B3] hover:text-white">
+                {t('buttons.subscribe')}
+              </button>
             </div>
             <p className="text-xs text-gray-500">
-              By subscribing, you agree to our Privacy Policy and consent to
-              receive updates from our company.
+              {t('footer.subscribe.terms')}
             </p>
           </div>
         </div>
 
         {/* Bottom Footer */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-white border-t border-gray-700 pt-6">
-          <p>Website By Gravit Infosystems pvt. ltd</p>
+          <p>{t('footer.copyright.development')}</p>
           <div className="flex flex-wrap gap-4 text-sm text-gray-400">
-            <small>© 2023 Millersneuk. All rights reserved.</small>
+            <small>{t('footer.copyright.rights')}</small>
             <small className="underline cursor-pointer hover:text-primary">
-              Privacy Policy
+              {t('footer.copyright.privacy')}
             </small>
             <small className="underline cursor-pointer hover:text-primary">
-              Terms of Service
+              {t('footer.copyright.terms')}
             </small>
             <small className="underline cursor-pointer hover:text-primary">
-              Cookies Settings
+              {t('footer.copyright.cookies')}
             </small>
           </div>
           <div className="flex gap-3">
@@ -203,13 +203,7 @@ export default function Footer() {
                 to={ele.link}
                 target="_blank"
                 key={i}
-                className="flex items-center justify-center 
-                        rounded-full border border-gray-400 
-                        bg-gray-100 text-black 
-                        w-6 h-6 sm:w-8 sm:h-8 
-                        transition-all duration-300 
-                        hover:-translate-y-1 hover:scale-110 
-                        hover:text-secondary hover:border-primary"
+                className="flex items-center justify-center rounded-full border border-gray-400 bg-gray-100 text-black w-6 h-6 sm:w-8 sm:h-8 transition-all duration-300 hover:-translate-y-1 hover:scale-110 hover:text-secondary hover:border-primary"
               >
                 <span className="text-lg sm:text-xl">{ele.icon}</span>
               </Link>

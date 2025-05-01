@@ -1,13 +1,14 @@
 import { motion } from "framer-motion";
 
-interface CardProps {
+type NormalCardProps = {
   image: string;
   name: string;
-  specificaiton: string;
+  specification: string;
   text: string;
-}
+  isArabic: boolean;
+};
 
-export default function NormalCard({ image, name, specificaiton, text }: CardProps) {
+export default function NormalCard({ image, name, specification, text,  }: NormalCardProps) {
   return (
     <div className="w-full flex flex-col">
       <motion.div
@@ -47,7 +48,7 @@ export default function NormalCard({ image, name, specificaiton, text }: CardPro
               }}
             >
               <h3 className="text-lg font-semibold text-gray-800">{name}</h3>
-              <p className="text-blue-500 text-sm mt-1">{specificaiton}</p>
+              <p className="text-blue-500 text-sm mt-1">{specification}</p>
               <p className="text-gray-700 text-xs mt-1">{text}</p>
             </motion.div>
           </div>

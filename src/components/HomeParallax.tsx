@@ -13,12 +13,13 @@ export default function HomeParallax() {
     target: containerRef,
     offset: ["start start", "end end"],
   });
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const isArabic = i18n.language === 'ar';
 
   return (
     <div ref={containerRef} className="relative min-h-[300vh] bg-black">
       <motion.div className="sticky top-0 h-[80vh] flex flex-col justify-center items-center text-center px-4 pt-12">
-        <div>
+        <div className={isArabic ? 'rtl' : 'ltr'}>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -26,20 +27,22 @@ export default function HomeParallax() {
             className="animate-gradient mb-4"
           >
             <span className="bg-gradient-to-b from-[#2f886c] via-[#c0dbdf] to-[#ffffff] bg-[length:300%] bg-clip-text text-transparent text-[60px]">
-              {t('Brighten Your Smile')}
+              {t('home.title.line1')}
             </span>
             <br />
             <span className="bg-gradient-to-b from-[#59bb9f] via-[#92d4e2] to-[#bff0ed] bg-[length:300%] bg-clip-text text-transparent text-[60px]">
-              {t('Brighten Your Day')}
+              {t('home.title.line2')}
             </span>
           </motion.h1>
         </div>
 
-        <p className="text-[#ffffffe0] text-[18px] font-normal-200 mb-4">
-          {t('Our philosophy is built on providing the world\'s best cosmetic dental care...')}
+        <p className={`text-[#ffffffe0] text-[18px] font-normal-200 mb-4 max-w-2xl ${
+          isArabic ? 'rtl' : 'ltr'
+        }`}>
+          {t('home.description')}
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-4" dir="ltr">
+        <div className="flex flex-col sm:flex-row gap-4" dir={isArabic ? 'rtl' : 'ltr'}>
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Button />
           </motion.div>

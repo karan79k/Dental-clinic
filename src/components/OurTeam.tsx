@@ -64,7 +64,7 @@ export default function TeamCarousel() {
       <div className="max-w-8xl mx-auto relative">
         {/* Header Section */}
         <div className={`flex items-center mb-10 px-8 ${
-          isArabic ? 'flex-row-reverse justify-start' : 'justify-between'
+          isArabic ? 'flex-row justify-between' : 'justify-between'
         }`}>
           <div className={`px-9 ${isArabic ? 'text-right' : 'text-left'}`}>
             <p className={`text-sm font-medium mb-4 ${isArabic ? 'text-[#1ab8b3]' : 'text-blue-600'}`}>
@@ -85,12 +85,12 @@ export default function TeamCarousel() {
           <Link
             to="/our-doctors"
             className={`flex items-center gap-1 px-8 font-medium transition-colors duration-200 
-            ${isArabic ? 'text-[#1ab8b3] hover:text-[#158e8a] flex-row-reverse' : 'text-blue-600 hover:text-blue-800'} 
+            ${isArabic ? 'text-[#1ab8b3] hover:text-[#158e8a] flex-row' : 'text-blue-600 hover:text-blue-800'} 
             group`}
           >
             {t('team.viewAll')}
             <span className={`transition-transform duration-200 ${
-              isArabic ? 'rotate-180 group-hover:-translate-x-1' : 'group-hover:translate-x-1'
+              isArabic ? ' group-hover:-translate-x-1' : 'group-hover:translate-x-1'
             }`}>
               <ChevronRight className="w-5 h-5" />
             </span>
@@ -132,7 +132,7 @@ export default function TeamCarousel() {
                         y: hoverIndex === index ? 0 : 20,
                       }}
                       transition={{ duration: 0.4, delay: 0.1 }}
-                      className={`w-full ${isArabic ? 'text-right' : 'text-left'}`}
+                      className={`w-full ${isArabic ? 'text-center' : 'text-center'}`}
                     >
                       <h3 className={`${
                         isArabic 
