@@ -122,7 +122,7 @@ export default function TeamCarousel() {
                 >
                   <div className={`w-full h-full ${
                     isArabic 
-                      ? 'bg-gradient-to-t from-black/90 via-black/60 to-transparent' 
+                      ? 'bg-gradient-to-t from-black/90 via-black/70 to-transparent' 
                       : 'bg-gradient-to-t from-white/90 via-white/60 to-transparent'
                   } backdrop-blur-md p-6 rounded-t-2xl`}>
                     <motion.div
@@ -136,7 +136,7 @@ export default function TeamCarousel() {
                     >
                       <h3 className={`${
                         isArabic 
-                          ? 'text-xl font-semibold text-[#1ab8b3]' 
+                          ? 'text-xl font-semibold text-[#58cac6]' 
                           : 'text-2xl font-bold tracking-wide text-gray-800'
                       }`}>
                         {t(member.nameKey)}
