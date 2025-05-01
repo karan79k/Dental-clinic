@@ -23,15 +23,15 @@
         "sections": {
             "features": {
                 "leaders": {
-                    "title": "Leaders",
-                    "subtitle": "in Cosmetic Dentistry"
+                    "title": "Industry Leaders",
+                    "subtitle": "in Dental Care"
                 },
                 "modern": {
-                    "title": "State of the Art",
-                    "subtitle": "Modern Clinic"
+                    "title": "Modern Technology",
+                    "subtitle": "Advanced Solutions"
                 },
                 "standards": {
-                    "title": "Redefining Standards",
+                    "title": "Setting Standards",
                     "subtitle": "in Patient Care"
                 }
             }
@@ -60,21 +60,32 @@
             "description": "Quality Clinics has evolved over the years...",
             "founded": "2008 - Company Founded",
             "journey": "Our journey began with a small team and a big vision to transform the industry"
+        },
+        "hero": {
+            "title": "Leaders in Cosmetic Dentistry",
+            "contactButton": "Contact Us"
+        },
+        "progress": {
+            "trustText": "Your Trusted Dental Practice in Jeddah, Saudi Arabia",
+            "historyTitle": "Take a look at how far we've come",
+            "evolutionText": "Quality Clinics has evolved over the years to become an industry leading cosmetic dental practice",
+            "standardText": "We pride ourselves on offering the highest standard of care to all patients",
+            "presentTitle": "Look at us now...",
+            "currentDay": "Present Day",
+            "reputationText": "We continue to build on our reputation for being the go-to dental practice in Saudi Arabia for Smile Makeovers, Implants and Facial Aesthetics",
+            "consultationText": "If you're interested in visiting us for a consultation, then please get in touch below:"
         }
     },
-    "testimonials": {
-        "title": "Patient Testimonials",
-        "subtitle": "We've built a reputation on going the extra mile for our patients. For us, it's always about you and treating every patient individually."
-    },
+    
     "practice": {
-        "title": "Our Practice",
-        "description": "Our state-of-the-art practice is situated...",
-        "team": {
-            "title": "Our Team",
-            "subtitle": "Experts in dental care",
-            "meetDentist": "Meet your dentist"
+        "title": "Our",
+        "highlight": "Practice",
+        "description": "Our state-of-the-art practice is situated on the outskirts of Glasgow, where you will be warmly greeted by our friendly team and calming atmosphere.",
+        "images": {
+            "alt": "Practice facility image"
         }
     },
+    
     "app": {
         "title": "Get Our App",
         "description": "Download our dental clinic app for easy...",
@@ -102,29 +113,51 @@
         "afterAlt": "After treatment image"
     },
     "testimonials": {
-    "title": "Patient Testimonials",
-    "subtitle": "We've built a reputation on going the extra mile for our patients. For us, it's always about you and treating every patient individually.",
-    "cards": [
-      {
-        "text": "This is an excellent practice! Nothing is too much trouble to any one of the members of staff here. <br/> I can highly recommend Millersneuk Dental Practice!",
-        "author": "Janice Reid - Denplan Patient"
-      },
-      {
-        "text": "First implant, absolutely delighted with the result and the treatment was painless.<br/> Would highly recommend the practice, Mr Church, Yvonne and the staff, who are all highly professional. Thank you for getting my smile back!",
-        "author": "Sandra Jamieson - Implant Patient"
-      },
-      {
-        "text": "I was never happy with my teeth and felt like the edges were not even. I wanted an improvement but did not want any damage to my own teeth.<br/> Since I have had composite bonding done, my confidence has increased so much.",
-        "author": "Mhairi Mclean - Invisalign & Bonding Patient"
-      },
-      {
-        "text": "Outstanding dental care! The entire team is professional and caring. The modern facilities and attention to detail made my dental experience exceptional.<br/> Very pleased with the results of my treatment.",
-        "author": "David Thompson - Cosmetic Dentistry Patient"
-      },
-      {
-        "text": "As someone who was always anxious about dental visits, this practice changed everything for me.<br/> The staff is incredibly patient and understanding. Their gentle approach made me feel at ease.",
-        "author": "Emma Wilson - Nervous Patient Care"
-      }
-    ]
-  }
+        "title": "Patient Testimonials",
+        "subtitle": "We've built a reputation on going the extra mile for our patients. For us, it's always about you and treating every patient individually.",
+        "cards": [
+            {
+                "text": "This is an excellent practice! Nothing is too much trouble to any one of the members of staff here. <br/> I can highly recommend Millersneuk Dental Practice!",
+                "author": "Janice Reid - Denplan Patient"
+            },
+            {
+                "text": "First implant, absolutely delighted with the result and the treatment was painless.<br/> Would highly recommend the practice, Mr Church, Yvonne and the staff, who are all highly professional. Thank you for getting my smile back!",
+                "author": "Sandra Jamieson - Implant Patient"
+            },
+            {
+                "text": "I was never happy with my teeth and felt like the edges were not even. I wanted an improvement but did not want any damage to my own teeth.<br/> Since I have had composite bonding done, my confidence has increased so much.",
+                "author": "Mhairi Mclean - Invisalign & Bonding Patient"
+            },
+            {
+                "text": "Outstanding dental care! The entire team is professional and caring. The modern facilities and attention to detail made my dental experience exceptional.<br/> Very pleased with the results of my treatment.",
+                "author": "David Thompson - Cosmetic Dentistry Patient"
+            },
+            {
+                "text": "As someone who was always anxious about dental visits, this practice changed everything for me.<br/> The staff is incredibly patient and understanding. Their gentle approach made me feel at ease.",
+                "author": "Emma Wilson - Nervous Patient Care"
+            }
+        ]
+    },
+    "timeline": {
+        "founded": {
+            "year": "2008",
+            "title": "Company Founded",
+            "description": "Quality Clinics is a Saudi institution based in Mecca. Established in 2008, it has six branches in Mecca and Jeddah. These clinics specialize in providing the best medical services in various dental, dermatology, and cosmetic specialties. It is distinguished by the presence of an elite group of skilled and experienced doctors, under the supervision of the orthodontist and maxillofacial consultant, Dr. Muhammad Sulaiman Baghrib, who is ranked first in the Kingdom in Invisalign orthodontics according to the official Invisalign website, and who obtained the German Board in Dentistry in 1992, in addition to the German Board in Orthodontics in 1998."
+        },
+        "quality": {
+            "year": "2021",
+            "title": "Why Quality?",
+            "description": "At Quality Dental and Dermatology Clinics, we are distinguished by our over twenty years of experience in providing the best medical services in various dental, dermatology, and cosmetic specialties. We utilize the latest medical technology and equipment, along with the finest materials and tools, to ensure a healthy and satisfying smile for our clients. We are distinguished by the presence of an elite group of skilled, competent and experienced doctors, and the presence of specialists in various dental specialties: Children's Dentistry - Prosthodontics - Root Canal Treatment - Orthodontics; under the supervision of orthodontic consultant Dr. Mohammed Baghraib, ranked number one in the Kingdom for Invisalign braces."
+        },
+        "vision": {
+            "year": "2023",
+            "title": "Vision",
+            "description": "To be the first choice for those seeking accurate diagnosis and quality treatment in a safe, sterile environment, under the care of expert hands, and using the latest technologies. Quality is the primary standard for our services, not an optional extra."
+        },
+        "message": {
+            "year": "Our Message",
+            "title": "Our Message",
+            "description": "We strive to satisfy our clients, meet all their needs under one roof, and provide them with the highest levels of healthcare. We ensure that healthcare meets the latest international standards and is delivered using the latest technology under the supervision of a team of consultants and specialists from international universities."
+        }
+    }
 }

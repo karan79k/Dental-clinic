@@ -1,56 +1,46 @@
 import { ReactNode, useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import Button from './Button';
+import { useTranslation } from 'react-i18next';
 
 type TimelineItem = {
   id: number;
-  year: string;
-  title: string;
-  description: string;
-  image?:string;
-  button?:ReactNode;
+  yearKey: string;
+  titleKey: string;
+  descriptionKey: string;
+  image?: string;
+  button?: ReactNode;
 };
 
 const timelineData: TimelineItem[] = [
   {
     id: 1,
-    year: '2008',
-    title: 'Company Founded',
-    description: 'Quality Clinics is a Saudi institution based in Mecca. Established in 2008, it has six branches in Mecca and Jeddah. These clinics specialize in providing the best medical services in various dental, dermatology, and cosmetic specialties. It is distinguished by the presence of an elite group of skilled and experienced doctors, under the supervision of the orthodontist and maxillofacial consultant, Dr. Muhammad Sulaiman Baghrib, who is ranked first in the Kingdom in Invisalign orthodontics according to the official Invisalign website, and who obtained the German Board in Dentistry in 1992, in addition to the German Board in Orthodontics in 1998.',
+    yearKey: 'timeline.founded.year',
+    titleKey: 'timeline.founded.title',
+    descriptionKey: 'timeline.founded.description',
   },
   {
     id: 2,
-    year: '2021',
-    title: 'Why Quality ?',
-    description: "At Quality Dental and Dermatology Clinics, we are distinguished by our over twenty years of experience in providing the best medical services in various dental, dermatology, and cosmetic specialties. We utilize the latest medical technology and equipment, along with the finest materials and tools, to ensure a healthy and satisfying smile for our clients. We are distinguished by the presence of an elite group of skilled, competent and experienced doctors, and the presence of specialists in various dental specialties: Children's Dentistry - Prosthodontics - Root Canal Treatment - Orthodontics; under the supervision of orthodontic consultant Dr. Mohammed Baghraib, ranked number one in the Kingdom for Invisalign braces. We also offer cosmetic services in the fields of dermatology, cosmetology, and laser, using specialized laser techniques and skin and hair treatment to achieve the best results for our clients, offering the highest levels of luxury and elegance they deserve.",
-    image:"https://plus.unsplash.com/premium_photo-1674179008328-c201db47a0bb?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    button:<Button/>
+    yearKey: 'timeline.quality.year',
+    titleKey: 'timeline.quality.title',
+    descriptionKey: 'timeline.quality.description',
+    image: "/Images/quality-clinic.jpg",
+    button: <Button />
   },
-
   {
     id: 3,
-    year: '2023',
-    title: 'Vision',
-    description: 'To be the first choice for those seeking accurate diagnosis and quality treatment in a safe, sterile environment, under the care of expert hands, and using the latest technologies. Quality is the primary standard for our services, not an optional extra.',
-    image:"https://plus.unsplash.com/premium_photo-1681997162401-a65011496a7c?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    button:<Button/>
-
+    yearKey: 'timeline.vision.year',
+    titleKey: 'timeline.vision.title',
+    descriptionKey: 'timeline.vision.description',
+    image: "/Images/vision-future.jpg",
+    button: <Button />
   },
   {
     id: 4,
-    year: 'Our message',
-    title: 'Our message',
-    description: 'We strive to satisfy our clients, meet all their needs under one roof, and provide them with the highest levels of healthcare. We ensure that healthcare meets the latest international standards and is delivered using the latest technology under the supervision of a team of consultants and specialists from international universities.',
-
+    yearKey: 'timeline.message.year',
+    titleKey: 'timeline.message.title',
+    descriptionKey: 'timeline.message.description',
   },
-  // {
-  //   id: 5,
-  //   year: '2025',
-  //   title: 'New Headquarters',
-  //   description: 'Moved into our new sustainable headquarters designed to foster collaboration and creativity.',
-  //   image:"https://plus.unsplash.com/premium_photo-1681997162401-a65011496a7c?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  //   button:<Button/>
-  // },
 ];
 
 const VerticalScrollTimeline = () => {
@@ -58,6 +48,7 @@ const VerticalScrollTimeline = () => {
   const timelineRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const [scrollProgress, setScrollProgress] = useState(0);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -97,18 +88,15 @@ const VerticalScrollTimeline = () => {
 
   const TimelineItem = ({ item, index }: { item: TimelineItem; index: number }) => {
     const isActive = index <= activeIndex;
-    // const isCurrentlyActive = index === activeIndex;
 
     return (
       <div className="grid grid-cols-12 items-center my-24 md:my-32 relative">
         {/* Left Content */}
         <div className="col-span-5 pr-4 text-right">
           <div className={`text-xl md:text-3xl font-medium ${isActive ? 'text-white' : 'text-gray-900'}`}>
-            {item.year}
+            {t(item.yearKey)}
           </div>
         </div>
-
-
 
         {/* Center Marker */}
         <div className="col-span-2 flex justify-center items-center relative z-10">
@@ -120,15 +108,14 @@ const VerticalScrollTimeline = () => {
         {/* Right Content */}
         <div className="col-span-5 pl-4 text-left ">
           <p className={`text-2xl font-normal  mb-2 ${isActive ? 'text-white' : 'text-gray-900'}`}>
-            {item.title}
+            {t(item.titleKey)}
           </p>
-          <p className={`font-extralight text-[15px] pr-2 ${isActive ? 'text-white' : 'text-gray-900'}`}>{item.description}</p>
+          <p className={`font-extralight text-[15px] pr-2 ${isActive ? 'text-white' : 'text-gray-900'}`}>{t(item.descriptionKey)}</p>
 
           <div className={`py-4 ${isActive ? '' : 'opacity-50 pointer-events-none'}`}>{item.button}</div>
           {item.image && (
-            <img src={item.image} alt={item.title} className={`rounded-md transition-all duration-300 ${isActive ? '' : 'grayscale-25 opacity-60'}`} />
+            <img src={item.image} alt={t(item.titleKey)} className={`rounded-md transition-all duration-300 ${isActive ? '' : 'grayscale-25 opacity-60'}`} />
           )}
-
         </div>
       </div>
     );

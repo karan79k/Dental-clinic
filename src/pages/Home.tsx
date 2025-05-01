@@ -6,7 +6,7 @@ import OurTreatmentsSlider from "../components/OurTreatmentsSlider"
 import OurPractice from "../components/OurPractice"
 import UpperParallax from "../components/UpperParallax"
 import Testimonials from "../components/Testimonials"
-import OurTeam from "../components/OurTeam"
+//import OurTeam from "../components/OurTeam"
 import HomeParallax from "../components/HomeParallax"
 
 export default function Home() {
@@ -18,7 +18,6 @@ export default function Home() {
       <UpperParallax/>
       <Testimonials/>
       <OurPractice/>
-      <OurTeam/>
     </div>
   )
 }
@@ -67,7 +66,8 @@ interface TextBlockProps {
 
 function TextBlock({ textKey, index, total, scrollYProgress }: TextBlockProps) {
   const ref = useRef(null);
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const isArabic = i18n.language === 'ar';
 
   const sectionStart = index / total;
   const sectionMid = sectionStart + 1 / total / 2;
@@ -87,31 +87,44 @@ function TextBlock({ textKey, index, total, scrollYProgress }: TextBlockProps) {
       ref={ref}
       className="absolute inset-0 flex items-start pt-[30vh] justify-center text-center"
       style={{
-        opacity,
-        zIndex: total - index,
+      opacity,
+      zIndex: total - index,
       }}
     >
-      <div className={`w-1/2 flex-wrap text-start`}>
-        <h2 className="text-4xl font-bold">
-          {index === 0 ? (
-            <>
-              <span className="text-[#1ab8b3]">{t('home.sections.features.leaders.title')}</span>{' '}
-              {t('home.sections.features.leaders.subtitle')}
-            </>
-          ) : index === 1 ? (
-            <>
-              {t('home.sections.features.modern.title')}{' '}
-              <span className="text-[#1ab8b3]">{t('home.sections.features.modern.subtitle')}</span>
-            </>
-          ) : index === 2 ? (
-            <>
-              <span className="text-[#1ab8b3]">{t('home.sections.features.standards.title')}</span>{' '}
-              {t('home.sections.features.standards.subtitle')}
-            </>
-          ) : (
-            t(textKey)
-          )}
-        </h2>
+      <div className={`w-2/3 flex-wrap ${isArabic ? 'text-end' : 'text-start'}`}>
+      <h2
+        className={`text-5xl lg:text-5xl xl:text-6lg font-bold leading-tight ${
+        isArabic ? 'tracking-normal' : 'tracking-wide'
+        } main-heading-font`}
+      >
+        {index === 0 ? (
+        <>
+          <span className="text-[#1ab8b3]">{t('home.sections.features.leaders.title')}</span>
+          {' '}
+          <span className={isArabic ? 'text-5xl lg:text-5xl' : ''}>
+          {t('home.sections.features.leaders.subtitle')}
+          </span>
+        </>
+        ) : index === 1 ? (
+        <>
+          <span className={isArabic ? 'text-5xl lg:text-5xl' : ''}>
+          {t('home.sections.features.modern.title')}
+          </span>
+          {' '}
+          <span className="text-[#1ab8b3]">{t('home.sections.features.modern.subtitle')}</span>
+        </>
+        ) : index === 2 ? (
+        <>
+          <span className="text-[#1ab8b3]">{t('home.sections.features.standards.title')}</span>
+          {' '}
+          <span className={isArabic ? 'text-5xl lg:text-5xl' : ''}>
+          {t('home.sections.features.standards.subtitle')}
+          </span>
+        </>
+        ) : (
+        t(textKey)
+        )}
+      </h2>
       </div>
     </motion.div>
   );

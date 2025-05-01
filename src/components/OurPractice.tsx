@@ -1,94 +1,144 @@
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef } from 'react';
-import { Link } from 'react-router-dom';
+import "keen-slider/keen-slider.min.css";
+import { useKeenSlider } from "keen-slider/react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { useState } from "react";
 
-const projects = [
-  "https://images.unsplash.com/photo-1525222285365-d6bfe94ec598?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3",
-  "https://images.unsplash.com/photo-1628619487925-e9b8fc4c6b08?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3",
-  "https://plus.unsplash.com/premium_photo-1708110769999-02be12f5930d?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3",
-  "https://plus.unsplash.com/premium_photo-1703382945684-60321c25f248?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3",
-  "https://images.unsplash.com/photo-1632874638128-c10ddbb9d51c?q=80&w=2000&auto=format&fit=crop&ixlib=rb-4.0.3"
-];
-
-export default function ServicesSlides() {
-  const containerRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end end"]
-  });
-
-  // Create background color transition from white to black
-  const backgroundColor = useTransform(
-    scrollYProgress,
-    [0, 0.04, 0.2],
-    ['#ffffff', '#222222', '#000000']
-  );
-
-
-  return (
-    <motion.div
-      ref={containerRef}
-      className="relative w-full min-h-[500vh] py-32 transition-colors duration-700"
-      style={{ backgroundColor }}
-    >
-      <div className="left-0 w-full flex flex-col items-center justify-center z-10">
-        <h3 className="text-black dark:text-white">
-          Our <span className='text-primary'>Practice</span>
-        </h3>
-        <p className="pt-2 w-1/2 text-center text-gray-600 dark:text-gray-300">
-          Our state-of-the-art practice is situated on the outskirts of Glasgow,
-          where you will be warmly greeted by our friendly team and calming atmosphere.
-        </p>
-      </div>
-
-      <div className='relative w-full min-h-[500vh] py-8 mb-12'>
-        <div className="sticky top-0 h-[90vh] overflow-hidden">
-          {projects.map((ele, idx) => (
-            <PrallaxSlide
-              key={idx}
-              src={ele}
-              index={idx}
-              scrollYProgress={scrollYProgress}
-              totalImages={projects.length}
-              isFirst={idx === 0}
-              path={`/projects`}
-            />
-          ))}
-        </div>
-      </div>
-    </motion.div>
-  );
+interface TeamMember {
+  image: string;
+  name: string;
+  specification: string;
+  text: string;
 }
 
-function PrallaxSlide({ src, index, scrollYProgress, totalImages, isFirst, path }: {
-  src: string;
-  index: number;
-  scrollYProgress: any;
-  totalImages: number;
-  isFirst: boolean;
-  path: string;
-}) {
-  const start = index / totalImages;
-  const end = (index + 1) / totalImages;
+const team: TeamMember[] = [
+  {
+    image: "/Images/cd-1.jpg",
+    name: "Dr Philip Church",
+    specification: "Dentist",
+    text: "Implants and Sedation",
+  },
+  {
+    image: "/Images/cd-2.jpg",
+    name: "Dr Jane Doe",
+    specification: "Oral Surgeon",
+    text: "Facial Reconstruction Expert",
+  },
+  {
+    image: "/Images/cd-3.jpg",
+    name: "Dr Alan Smith",
+    specification: "Orthodontist",
+    text: "Braces and Aligners",
+  },
+  {
+    image: "/Images/cp-1.jpg",
+    name: "Dr Nina Patel",
+    specification: "Prosthodontist",
+    text: "Crowns and Implants",
+  },
+];
 
-  const x = useTransform(scrollYProgress, [start, end], ["100%", "0%"]);
-  const opacity = useTransform(scrollYProgress, [start, end], [0, 1]);
+export default function TeamCarousel() {
+  const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
+    loop: true,
+    slides: {
+      perView: 3,
+      spacing: -60,
+    },
+    created(slider) {
+      setInterval(() => {
+        slider?.next();
+      }, 5000);
+    },
+  });
+
+  const [hoverIndex, setHoverIndex] = useState<number | null>(null);
 
   return (
-    <motion.div
-      style={{
-        x: isFirst ? '0%' : x,
-        opacity: isFirst ? 1 : opacity,
-      }}
-      className="absolute top-0 left-0 w-full h-full flex items-center justify-center pt-20"
-    >
-      <Link to={path}>
-        <motion.img
-          src={src}
-          alt="img"
-          className="object-cover w-[95vw] lg:w-[85vw]  sm:h-screen md:h-[80vh] lg:h-[80vh] rounded-2xl brightness-70"
-        />
-      </Link>
-    </motion.div>
+    <section className="py-12 bg-gray-50 relative w-full min-h-100 pb-40">
+      <div className="max-w-8xl mx-auto relative">
+        {/* Header */}
+        <div className="flex items-center justify-between mb-10 px-8">
+          <div className="px-9">
+            <p className="text-sm text-blue-600">Meet your dentist</p>
+            <h2 className="text-4xl font-semibold text-gray-800">Our Team</h2>
+            <p className="text-gray-500 font-extralight text-[18px]">Experts in dental care</p>
+          </div>
+          <Link
+            to="/our-doctors"
+            className="flex items-center gap-1 px-8 text-blue-600 font-medium transition-colors duration-200 hover:text-blue-800 group"
+          >
+            View All
+            <span className="transition-transform duration-200 group-hover:translate-x-1">
+              <ChevronRight className="w-5 h-5" />
+            </span>
+          </Link>
+        </div>
+
+        {/* Carousel */}
+        <div ref={sliderRef} className="keen-slider">
+          {team.map((member, index) => (
+            <div key={index} className="keen-slider__slide">
+              <motion.div
+                className="relative w-[360px] h-[540px] overflow-hidden rounded-2xl shadow-xl mx-auto group"
+                onHoverStart={() => setHoverIndex(index)}
+                onHoverEnd={() => setHoverIndex(null)}
+              >
+                {/* Image */}
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+
+                {/* Animated Overlay Panel */}
+                <motion.div
+                  className="absolute bottom-0 left-0 w-full h-30% z-20"
+                  initial={{ y: "100%" }}
+                  animate={{ y: hoverIndex === index ? "0%" : "100%" }}
+                  transition={{
+                    duration: 0.6,
+                    ease: [0.25, 1, 0.5, 1],
+                  }}
+                >
+                  <div className="w-full h-full bg-gradient-to-t from-white/90 via-white/60 to-transparent backdrop-blur-md p-6 rounded-t-2xl flex flex-col items-start justify-start text-center">
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{
+                        opacity: hoverIndex === index ? 1 : 0,
+                        y: hoverIndex === index ? 0 : 20,
+                      }}
+                      transition={{ duration: 0.4, delay: 0.1 }}
+                      className="w-full"
+                    >
+                      <h3 className="text-xl font-semibold text-gray-800">{member.name}</h3>
+                      <p className="text-blue-500 text-base mt-1">{member.specification}</p>
+                      <p className="text-gray-700 text-sm mt-2">{member.text}</p>
+                    </motion.div>
+                  </div>
+                </motion.div>
+              </motion.div>
+            </div>
+          ))}
+        </div>
+
+        {/* Navigation Arrows */}
+        <div className="absolute mt-10 right-14 flex gap-3 z-10">
+          <button
+            onClick={() => instanceRef.current?.prev()}
+            className="bg-white shadow-md p-2 rounded-full"
+          >
+            <ChevronLeft className="h-6 w-6 text-gray-600" />
+          </button>
+          <button
+            onClick={() => instanceRef.current?.next()}
+            className="bg-white shadow-md p-2 rounded-full"
+          >
+            <ChevronRight className="h-6 w-6 text-gray-600" />
+          </button>
+        </div>
+      </div>
+    </section>
   );
 }
