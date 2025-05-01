@@ -1,8 +1,10 @@
 import { FaPhoneAlt } from "react-icons/fa";
 import { MdOutlineEmail } from "react-icons/md";
 import { FaMapMarkerAlt } from "react-icons/fa";
-
+import { useTranslation } from "react-i18next";
 export default function Contact() {
+   const { t } = useTranslation();
+  
   return (
     <div className="min-h-screen pt-14 flex flex-col bg-gray-50">
       <div className="container mx-auto py-16">
@@ -14,9 +16,9 @@ export default function Contact() {
               <div className="flex flex-col space-y-4">
                 <div className="flex items-center gap-3">
                   <FaMapMarkerAlt className="w-6 h-6" />
-                  <h4 className="font-semibold">Locate Us</h4>
+                  <h4 className="font-semibold">{t('contact.locateUs')}</h4>
                 </div>
-                <p className="text-gray-100">Quality Clinics, Saudi Arabia.</p>
+                <p className="text-gray-100">{t('contact.clinic')}</p>
               </div>
             </div>
 
@@ -25,7 +27,7 @@ export default function Contact() {
               <div className="flex flex-col space-y-4">
                 <div className="flex items-center gap-3">
                   <FaPhoneAlt className="w-6 h-6" />
-                  <h4 className="font-semibold">Phone</h4>
+                  <h4 className="font-semibold">{t('contact.phone')}</h4>
                 </div>
                 <a
                   href="tel:920004864"
@@ -41,7 +43,7 @@ export default function Contact() {
               <div className="flex flex-col space-y-4">
                 <div className="flex items-center gap-3">
                   <MdOutlineEmail className="w-6 h-6" />
-                  <h4 className="font-semibold">Email</h4>
+                  <h4 className="font-semibold">{t('contact.email')}</h4>
                 </div>
                 <a
                   href="mailto:care@aljawdahclinic.com"

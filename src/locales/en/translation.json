@@ -12,7 +12,8 @@
         "bookAppointment": "Book Appointment",
         "subscribe": "Subscribe",
         "previous": "Previous",
-        "next": "Next"
+        "next": "Next" 
+        
     },
     "home": {
         "title": {
@@ -107,8 +108,8 @@
     },
     "contact": {
         "title": "Contact Us",
-        "locate": "Locate Us",
-        "clinic": "Quality Clinics",
+        "locateUs": "Locate Us",
+        "clinic": "Quality Clinics, Saudi Arabia",
         "phone": "Phone",
         "email": "Email"
     },
