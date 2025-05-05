@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import Progressbar from "../components/Progressbar";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import OurValues from "../components/OurValues";
 
 export default function About() {
   const { t, i18n } = useTranslation();
@@ -41,6 +42,7 @@ export default function About() {
       </div>
 
       <Progressbar />
+      <OurValues />
     </div>
   );
 }
